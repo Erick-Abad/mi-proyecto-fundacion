@@ -66,4 +66,40 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
         console.error('Error al enviar el mensaje:', error);
         alert('Hubo un problema al enviar el mensaje. Inténtalo nuevamente.');
     });
+    // Selecciona la hamburguesa
+const hamburger = document.querySelector('.hamburger');
+
+// Variables para almacenar las posiciones del toque
+let isDragging = false;
+let startX, startY, initialX, initialY;
+
+// Inicia el arrastre
+hamburger.addEventListener('touchstart', (e) => {
+    isDragging = true;
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+    initialX = hamburger.offsetLeft;
+    initialY = hamburger.offsetTop;
+});
+
+// Movimiento de arrastre
+document.addEventListener('touchmove', (e) => {
+    if (isDragging) {
+        const currentX = e.touches[0].clientX;
+        const currentY = e.touches[0].clientY;
+
+        const deltaX = currentX - startX;
+        const deltaY = currentY - startY;
+
+        // Actualiza la posición de la hamburguesa
+        hamburger.style.left = `${initialX + deltaX}px`;
+        hamburger.style.top = `${initialY + deltaY}px`;
+    }
+});
+
+// Termina el arrastre
+document.addEventListener('touchend', () => {
+    isDragging = false;
+});
+
 });

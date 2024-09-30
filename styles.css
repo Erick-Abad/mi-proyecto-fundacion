@@ -7,11 +7,11 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f8f9fa;
 }
 
 header {
-    background-color: #333;
+    background-color: #444; /* Un tono más claro de gris */
     color: white;
     padding: 1rem;
     display: flex;
@@ -27,9 +27,20 @@ header {
 
 /* Menú hamburguesa */
 .hamburger {
-    display: none;
+    display: none; /* Se mostrará en móviles */
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    width: 50px;
+    height: 50px;
+    background-color: #007bff; /* Color azul */
+    border-radius: 50%; /* Forma redonda */
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .hamburger .bar {
@@ -81,8 +92,15 @@ nav ul li a {
         transition: left 0.3s ease-in-out;
     }
 
-    nav ul.nav-active {
+    .nav-active {
         left: 0;
+        position: fixed;
+        top: 0;
+        width: 250px;
+        height: 100%;
+        background-color: #333;
+        z-index: 999;
+        transition: left 0.3s ease-in-out;
     }
 
     nav ul li {
@@ -96,6 +114,7 @@ nav ul li a {
     max-width: 100%;
     height: 400px;
     overflow: hidden;
+    z-index: 1;
 }
 
 .slider img {
@@ -193,7 +212,7 @@ footer {
 .programs-section h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
-    color: #e74c3c;
+    color: #333; /* Cambiado de rojo a negro */
 }
 
 .programs-container {
@@ -239,7 +258,7 @@ footer {
 .contact-section h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
-    color: #e74c3c;
+    color: #333; /* Cambiado de rojo a negro */
 }
 
 .contact-container {
@@ -339,12 +358,39 @@ footer {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    .contact-container {
+    nav ul {
         flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        background-color: #333;
+        width: 250px;
+        height: 100%;
+        transition: left 0.3s ease-in-out;
+        z-index: 1000; /* Asegúrate de que esté por encima de todo */
     }
 
-    #contact-form, .contact-info {
-        margin-right: 0;
-        max-width: 100%;
+    nav ul.nav-active {
+        left: 0;
+    }
+    .center-layout {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem; /* Aumentar el espacio entre las tarjetas */
+    }
+
+    .card {
+        width: 90%; /* Asegúrate de que las tarjetas ocupen casi todo el ancho en pantallas pequeñas */
+        margin-bottom: 1rem; /* Añadir espacio debajo de cada tarjeta */
+    }
+
+    .card h3 {
+        font-size: 2rem; /* Ajustar el tamaño del texto para que sea más legible en pantallas pequeñas */
+        margin-bottom: 0.5rem; /* Espacio debajo del título */
+    }
+
+    .card p, .centered-values {
+        font-size: 1.1rem; /* Reducir el tamaño del texto para que se ajuste mejor en pantallas pequeñas */
     }
 }
+
