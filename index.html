@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRANSFORMADOS Fundación Internacional</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="public/LogoPrincipal.png" alt="Logo Fundación" class="logo-img">
+        </div>
+        <!-- Menú hamburguesa -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home" data-lang="es">Inicio</a><a href="#home" data-lang="en" style="display:none;">Home</a></li>
+                <li><a href="#about" data-lang="es">Nosotros</a><a href="#about" data-lang="en" style="display:none;">About Us</a></li>
+                <li><a href="#programs" data-lang="es">Nuestros Programas</a><a href="#programs" data-lang="en" style="display:none;">Our Programs</a></li>
+                <li><a href="#help" data-lang="es">Cómo Ayudar</a><a href="#help" data-lang="en" style="display:none;">How to Help</a></li>
+                <li><a href="#contact" data-lang="es">Contáctanos</a><a href="#contact" data-lang="en" style="display:none;">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="lang-toggle">
+            <button onclick="changeLang('es')">ES</button>
+            <button onclick="changeLang('en')">EN</button>
+        </div>
+    </header>
+
+    <!-- Slider Section con flechas -->
+    <section class="slider">
+        <div class="arrow left-arrow" onclick="changeSlide(-1)">&#10094;</div>
+        <div class="slide fade">
+            <img src="public/slide1.jpeg" alt="Slide 1">
+        </div>
+        <div class="slide fade">
+            <img src="public/slide2.jpeg" alt="Slide 2">
+        </div>
+        <div class="slide fade">
+            <img src="public/slide3.jpeg" alt="Slide 3">
+        </div>
+        <div class="slide fade">
+            <img src="public/slide4.jpeg" alt="Slide 4">
+        </div>
+        <div class="arrow right-arrow" onclick="changeSlide(1)">&#10095;</div>
+    </section>
+
+    <section id="about" class="about-section">
+        <h2 class="about-heading" data-lang="es">¿Quiénes Somos?</h2>
+        <h2 class="about-heading" data-lang="en" style="display:none;">Who We Are</h2>
+
+        <p class="about-description" data-lang="es">
+            Somos un equipo comprometido con la transformación social y el bienestar de las comunidades vulnerables. Nuestra misión es promover la equidad y la inclusión a través de programas de beneficencia, labor social y apoyo comunitario.
+        </p>
+        <p class="about-description" data-lang="en" style="display:none;">
+            We are a team committed to social transformation and the well-being of vulnerable communities. Our mission is to promote equity and inclusion through charity programs, social work, and community support.
+        </p>
+
+        <div class="center-layout">
+            <!-- Misión -->
+            <div class="card">
+                <img src="public/Mision.png" alt="Misión Icon" class="icon">
+                <h3 data-lang="es">MISIÓN</h3>
+                <h3 data-lang="en" style="display:none;">MISSION</h3>
+                <p class="justificado" data-lang="es">Asistir, empoderar y fortalecer a cada familia en el mundo a través de nuestros programas de desarrollo individual y comunitario.</p>
+                <p class="justificado" data-lang="en" style="display:none;">Assist, empower, and strengthen every family worldwide through our individual and community development programs.</p>
+            </div>
+
+            <!-- Visión -->
+            <div class="card">
+                <img src="public/Vision.png" alt="Visión Icon" class="icon">
+                <h3 data-lang="es">VISIÓN</h3>
+                <h3 data-lang="en" style="display:none;">VISION</h3>
+                <p class="justificado" data-lang="es">Contar con oficinas en varios países del mundo, trabajando con el corazón, de manera ética y profesional en la atención brindada a cada beneficiario.</p>
+                <p class="justificado" data-lang="en" style="display:none;">To have offices in various countries, working with heart, ethically and professionally, in the care provided to each beneficiary.</p>
+            </div>
+
+            <!-- Valores -->
+            <div class="card">
+                <img src="public/Valores.png" alt="Valores Icon" class="icon">
+                <h3 data-lang="es">VALORES</h3>
+                <h3 data-lang="en" style="display:none;">VALUES</h3>
+                <ul class="centered-values" data-lang="es">
+                    <li>Excelencia</li>
+                    <li>Integridad</li>
+                    <li>Innovación</li>
+                    <li>Responsabilidad Social</li>
+                    <li>Compromiso</li>
+                </ul>
+                <ul class="centered-values" data-lang="en" style="display:none;">
+                    <li>Excellence</li>
+                    <li>Integrity</li>
+                    <li>Innovation</li>
+                    <li>Social Responsibility</li>
+                    <li>Commitment</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Programas -->
+    <section id="programs" class="programs-section">
+        <h2 data-lang="es">Nuestros Programas</h2>
+        <h2 data-lang="en" style="display:none;">Our Programs</h2>
+        <div class="programs-container">
+            <!-- Programa 1: Años Dorados -->
+            <div class="program-card">
+                <img src="public/Años.png" alt="Años Dorados" class="program-icon">
+                <h3 data-lang="es">Años Dorados</h3>
+                <h3 data-lang="en" style="display:none;">Golden Years</h3>
+                <p data-lang="es">Dirigido a los adultos mayores residentes del Hogar San José. Se hacen visitas varias veces al año donde se realizan actividades lúdicas de entretenimiento para nuestros adultos mayores, entrega de obsequios, reconocimiento al personal de cuidado al adulto mayor y entrega de asistencias alimentaria para el comedor de la Casa Hogar.</p>
+                <p data-lang="en" style="display:none;">Targeted at elderly residents of Hogar San José. Several visits are made throughout the year where recreational activities are held for our elderly, gifts are distributed, recognition of care personnel is made, and food assistance is delivered to the dining room of the Casa Hogar.</p>
+            </div>
+
+            <!-- Programa 2: Activando Corazones -->
+            <div class="program-card">
+                <img src="public/Donar.png" alt="Activando Corazones" class="program-icon">
+                <h3 data-lang="es">Activando Corazones</h3>
+                <h3 data-lang="en" style="display:none;">Activating Hearts</h3>
+                <p data-lang="es">Dirigido a personas que deseen formar parte de nuestro staff de donantes o voluntarios. Las donaciones receptadas son entregadas a nuestras familias beneficiarias, cuya entrega también es evidenciada en nuestras redes sociales.</p>
+                <p data-lang="en" style="display:none;">For those who wish to join our donor or volunteer staff. The donations received are delivered to our beneficiary families, with the deliveries also being showcased on our social networks.</p>
+            </div>
+
+            <!-- Programa 3: Mi Amor Trasciende -->
+            <div class="program-card">
+                <img src="public/Familia.png" alt="Mi Amor Trasciende" class="program-icon">
+                <h3 data-lang="es">Mi Amor Trasciende</h3>
+                <h3 data-lang="en" style="display:none;">My Love Transcends</h3>
+                <p data-lang="es">Dirigido a familias, cuyo(s) miembro(s) menor(es) de edad padecen enfermedades catastróficas y no poseen los recursos para cubrir ni sus necesidades básicas. Los beneficiarios reciben ayuda total o parcial en los gastos médicos de su tratamiento, además de donaciones o asistencia material según lo requiera.</p>
+                <p data-lang="en" style="display:none;">For families whose minor members suffer from catastrophic illnesses and lack the resources to cover even basic needs. Beneficiaries receive full or partial assistance with their medical treatment costs, as well as donations or material assistance as needed.</p>
+            </div>
+
+            <!-- Programa 4: Sonrisas de Luz -->
+            <div class="program-card">
+                <img src="public/Graduacion.png" alt="Sonrisas de Luz" class="program-icon">
+                <h3 data-lang="es">Sonrisas de Luz</h3>
+                <h3 data-lang="en" style="display:none;">Smiles of Light</h3>
+                <p data-lang="es">Dirigido a la comunidad estudiantil donde brindamos apoyo psicoterapéutico tanto a docente como estudiantes y cuidadores. Talleres gratuitos de concientización en burn-out, bullying, discriminación, violencia y abuso sexual. Entrega de donaciones a escuelas en zonas rurales del país.</p>
+                <p data-lang="en" style="display:none;">Targeted at the student community where we provide psychotherapeutic support to both teachers and students and caregivers. Free awareness workshops on burnout, bullying, discrimination, violence, and sexual abuse. Donations are delivered to schools in rural areas of the country.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contáctanos -->
+    <section id="contact" class="contact-section">
+        <h2 data-lang="es">Contáctanos</h2>
+        <h2 data-lang="en" style="display:none;">Contact Us</h2>
+        
+        <div class="contact-container">
+            <!-- Formulario de contacto -->
+            <form id="contact-form">
+                <label for="name">NOMBRE:</label>
+                <input type="text" id="name" name="name" placeholder="Escriba su nombre aquí" required>
+        
+                <label for="email">EMAIL:</label>
+                <input type="email" id="email" name="email" placeholder="email@address.com" required>
+        
+                <label for="message">MENSAJE:</label>
+                <textarea id="message" name="message" placeholder="Escribe aquí tu mensaje" required></textarea>
+        
+                <button type="submit">Enviar</button>
+            </form>
+        
+            <!-- Información de contacto -->
+            <div class="contact-info">
+                <h3>Información de Contacto</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Gómez Rendón y Los Ríos, Quito, Ecuador</p>
+                <p><i class="fas fa-phone-alt"></i> <a href="tel:0984268343">0984268343</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:abadmonserrate342@gmail.com">abadmonserrate342@gmail.com</a></p>
+            </div>
+        </div>
+        
+        <!-- Mapa -->
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.493901019633!2d-78.50786602150304!3d-0.19133796313284277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d599c1ad34016b%3A0x7b4f4cf9f5d18a47!2sG%C3%B3mez%20Rend%C3%B3n%20%26%20Los%20R%C3%ADos%2C%20Quito%20170103%2C%20Ecuador!5e0!3m2!1ses!2sus!4v1694697123456!5m2!1ses!2sus" 
+                width="100%" 
+                height="400" 
+                frameborder="0" 
+                style="border:0;" 
+                allowfullscreen="" 
+                aria-hidden="false" 
+                tabindex="0"></iframe>
+        </div>
+    </section>
+    
+    
+
+    <footer>
+        <p>&copy; 2024 TRANSFORMADOS Fundación Internacional. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="src/app.js"></script>
+</body>
+</html>

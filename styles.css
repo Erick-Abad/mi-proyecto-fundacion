@@ -1,0 +1,350 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.logo img {
+    width: 150px;
+    height: auto;
+}
+
+/* Menú hamburguesa */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+}
+
+.lang-toggle {
+    display: flex;
+    gap: 1rem;
+}
+
+.lang-toggle button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Ajustes del menú hamburguesa solo para móviles */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    nav ul {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: -100%;
+        background-color: #333;
+        width: 100%;
+        transition: left 0.3s ease-in-out;
+    }
+
+    nav ul.nav-active {
+        left: 0;
+    }
+
+    nav ul li {
+        margin: 1rem 0;
+    }
+}
+
+/* Slider */
+.slider {
+    position: relative;
+    max-width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+.slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: fadeEffect 1.5s ease-in-out;
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Sección ¿Quiénes Somos? */
+.about-section {
+    text-align: center;
+    padding: 2rem;
+}
+
+.about-heading {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.about-description {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: #555;
+    text-align: justify;
+    padding: 0 2rem;
+}
+
+.center-layout {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2rem;
+    text-align: center;
+}
+
+.card {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card h3 {
+    font-size: 1.8rem;
+    color: #00bfa5;
+    margin-bottom: 1rem;
+}
+
+.card img.icon {
+    width: 80px;
+    margin-bottom: 1rem;
+}
+
+.card p, .centered-values {
+    font-size: 1.2rem;
+    color: #555;
+    text-align: center;
+}
+
+.centered-values {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Sección Programas */
+.programs-section {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.programs-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #e74c3c;
+}
+
+.programs-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.program-card {
+    width: 300px;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.program-icon {
+    width: 80px;
+    margin-bottom: 1rem;
+}
+
+.program-card h3 {
+    font-size: 1.8rem;
+    color: #00bfa5;
+    margin-bottom: 1rem;
+}
+
+.program-card p {
+    font-size: 1.2rem;
+    color: #555;
+    text-align: justify;
+}
+
+/* Sección de Contacto */
+.contact-section {
+    padding: 2rem;
+    text-align: center;
+    background-color: #fff;
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #e74c3c;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+/* Form Styles */
+#contact-form {
+    flex: 1;
+    margin-right: 2rem;
+    max-width: 400px;
+}
+
+#contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #333;
+}
+
+#contact-form input, #contact-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#contact-form textarea {
+    height: 150px;
+}
+
+#contact-form button {
+    background-color: #00bfa5;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+}
+
+#contact-form button:hover {
+    background-color: #008f7a;
+}
+
+/* Contact Info Styles */
+.contact-info {
+    flex: 1;
+    text-align: left;
+    max-width: 400px;
+}
+
+.contact-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.contact-info p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+.contact-info a {
+    color: #00bfa5;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: none;
+    color: #008f7a;
+}
+
+.contact-info a:focus, .contact-info a:active {
+    text-decoration: none;
+    outline: none;
+}
+
+.contact-info .address {
+    color: #00bfa5;
+}
+
+.map-container {
+    margin-top: 2rem;
+}
+
+.map-container iframe {
+    border-radius: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+
+    #contact-form, .contact-info {
+        margin-right: 0;
+        max-width: 100%;
+    }
+}
