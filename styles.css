@@ -202,6 +202,43 @@ footer {
     padding: 1rem;
 }
 
+/* Estilos para el modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.modal-content video {
+    width: 100%;
+    height: auto;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #000;
+}
+
 /* Sección Programas */
 .programs-section {
     padding: 2rem;
@@ -373,24 +410,24 @@ footer {
     nav ul.nav-active {
         left: 0;
     }
+
     .center-layout {
         flex-direction: column;
         align-items: center;
-        gap: 2rem; /* Aumentar el espacio entre las tarjetas */
+        gap: 2rem;
     }
 
     .card {
-        width: 90%; /* Asegúrate de que las tarjetas ocupen casi todo el ancho en pantallas pequeñas */
-        margin-bottom: 1rem; /* Añadir espacio debajo de cada tarjeta */
+        width: 90%;
+        margin-bottom: 1rem;
     }
 
     .card h3 {
-        font-size: 2rem; /* Ajustar el tamaño del texto para que sea más legible en pantallas pequeñas */
-        margin-bottom: 0.5rem; /* Espacio debajo del título */
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
     }
 
     .card p, .centered-values {
-        font-size: 1.1rem; /* Reducir el tamaño del texto para que se ajuste mejor en pantallas pequeñas */
+        font-size: 1.1rem;
     }
 }
-

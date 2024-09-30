@@ -14,6 +14,26 @@ function showSlides() {
     setTimeout(showSlides, 5000);
 }
 
+function openVideoModal(videoSrc) {
+    const modal = document.getElementById('videoModal');
+    const videoSource = document.getElementById('videoSource');
+    const videoElement = document.getElementById('programVideo');
+
+    videoSource.src = `public/video/${videoSrc}`;
+    videoElement.load();  // Carga el nuevo video
+    modal.style.display = 'flex';
+    videoElement.play();  // Reproduce el video
+}
+
+function closeVideoModal() {
+    const modal = document.getElementById('videoModal');
+    const videoElement = document.getElementById('programVideo');
+
+    modal.style.display = 'none';
+    videoElement.pause();  // Pausa el video
+    videoElement.currentTime = 0;  // Reinicia el video
+}
+
 // Función para cambiar de diapositiva con flechas
 function changeSlide(n) {
     showSlides((slideIndex += n));
@@ -66,7 +86,9 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
         console.error('Error al enviar el mensaje:', error);
         alert('Hubo un problema al enviar el mensaje. Inténtalo nuevamente.');
     });
-    // Selecciona la hamburguesa
+});
+
+// Selecciona la hamburguesa
 const hamburger = document.querySelector('.hamburger');
 
 // Variables para almacenar las posiciones del toque
@@ -100,6 +122,4 @@ document.addEventListener('touchmove', (e) => {
 // Termina el arrastre
 document.addEventListener('touchend', () => {
     isDragging = false;
-});
-
 });

@@ -108,43 +108,46 @@
         <h2 data-lang="es">Nuestros Programas</h2>
         <h2 data-lang="en" style="display:none;">Our Programs</h2>
         <div class="programs-container">
-            <!-- Programa 1: Años Dorados -->
-            <div class="program-card">
-                <img src="public/Años.png" alt="Años Dorados" class="program-icon">
-                <h3 data-lang="es">Años Dorados</h3>
-                <h3 data-lang="en" style="display:none;">Golden Years</h3>
-                <p data-lang="es">Dirigido a los adultos mayores residentes del Hogar San José. Se hacen visitas varias veces al año donde se realizan actividades lúdicas de entretenimiento para nuestros adultos mayores, entrega de obsequios, reconocimiento al personal de cuidado al adulto mayor y entrega de asistencias alimentaria para el comedor de la Casa Hogar.</p>
-                <p data-lang="en" style="display:none;">Targeted at elderly residents of Hogar San José. Several visits are made throughout the year where recreational activities are held for our elderly, gifts are distributed, recognition of care personnel is made, and food assistance is delivered to the dining room of the Casa Hogar.</p>
-            </div>
-
-            <!-- Programa 2: Activando Corazones -->
-            <div class="program-card">
+            <!-- Programa 1: Activando Corazones -->
+            <div class="program-card" id="activando-corazones" onclick="openVideoModal('Activando.mp4')">
                 <img src="public/Donar.png" alt="Activando Corazones" class="program-icon">
                 <h3 data-lang="es">Activando Corazones</h3>
-                <h3 data-lang="en" style="display:none;">Activating Hearts</h3>
-                <p data-lang="es">Dirigido a personas que deseen formar parte de nuestro staff de donantes o voluntarios. Las donaciones receptadas son entregadas a nuestras familias beneficiarias, cuya entrega también es evidenciada en nuestras redes sociales.</p>
-                <p data-lang="en" style="display:none;">For those who wish to join our donor or volunteer staff. The donations received are delivered to our beneficiary families, with the deliveries also being showcased on our social networks.</p>
+                <p data-lang="es">Dirigido a personas que deseen formar parte de nuestro staff de donantes o voluntarios...</p>
+            </div>
+            
+            <!-- Programa 2: Años Dorados -->
+            <div class="program-card" id="años-dorados" onclick="openVideoModal('año.mp4')">
+                <img src="public/Años.png" alt="Años Dorados" class="program-icon">
+                <h3 data-lang="es">Años Dorados</h3>
+                <p data-lang="es">Dirigido a los adultos mayores residentes del Hogar San José...</p>
             </div>
 
             <!-- Programa 3: Mi Amor Trasciende -->
-            <div class="program-card">
+            <div class="program-card" id="mi-amor" onclick="openVideoModal('amor.mp4')">
                 <img src="public/Familia.png" alt="Mi Amor Trasciende" class="program-icon">
                 <h3 data-lang="es">Mi Amor Trasciende</h3>
-                <h3 data-lang="en" style="display:none;">My Love Transcends</h3>
-                <p data-lang="es">Dirigido a familias, cuyo(s) miembro(s) menor(es) de edad padecen enfermedades catastróficas y no poseen los recursos para cubrir ni sus necesidades básicas. Los beneficiarios reciben ayuda total o parcial en los gastos médicos de su tratamiento, además de donaciones o asistencia material según lo requiera.</p>
-                <p data-lang="en" style="display:none;">For families whose minor members suffer from catastrophic illnesses and lack the resources to cover even basic needs. Beneficiaries receive full or partial assistance with their medical treatment costs, as well as donations or material assistance as needed.</p>
+                <p data-lang="es">Dirigido a familias, cuyo(s) miembro(s) menor(es) de edad padecen enfermedades catastróficas...</p>
             </div>
 
             <!-- Programa 4: Sonrisas de Luz -->
-            <div class="program-card">
+            <div class="program-card" id="sonrisas-luz" onclick="openVideoModal('sonrisa.mp4')">
                 <img src="public/Graduacion.png" alt="Sonrisas de Luz" class="program-icon">
                 <h3 data-lang="es">Sonrisas de Luz</h3>
-                <h3 data-lang="en" style="display:none;">Smiles of Light</h3>
-                <p data-lang="es">Dirigido a la comunidad estudiantil donde brindamos apoyo psicoterapéutico tanto a docente como estudiantes y cuidadores. Talleres gratuitos de concientización en burn-out, bullying, discriminación, violencia y abuso sexual. Entrega de donaciones a escuelas en zonas rurales del país.</p>
-                <p data-lang="en" style="display:none;">Targeted at the student community where we provide psychotherapeutic support to both teachers and students and caregivers. Free awareness workshops on burnout, bullying, discrimination, violence, and sexual abuse. Donations are delivered to schools in rural areas of the country.</p>
+                <p data-lang="es">Dirigido a la comunidad estudiantil donde brindamos apoyo psicoterapéutico...</p>
             </div>
         </div>
     </section>
+
+    <!-- Modal para Videos -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeVideoModal()">&times;</span>
+            <video id="programVideo" controls>
+                <source id="videoSource" src="" type="video/mp4">
+                Tu navegador no soporta la reproducción de videos.
+            </video>
+        </div>
+    </div>
 
     <!-- Sección de Contáctanos -->
     <section id="contact" class="contact-section">
@@ -189,8 +192,6 @@
         </div>
     </section>
     
-    
-
     <footer>
         <p>&copy; 2024 TRANSFORMADOS Fundación Internacional. Todos los derechos reservados.</p>
     </footer>
