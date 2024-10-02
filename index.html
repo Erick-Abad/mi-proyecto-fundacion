@@ -140,45 +140,55 @@
         </div>
     </section>
 
-    <!-- Modal para Videos -->
-    <div id="videoModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeVideoModal()">&times;</span>
-            <video id="programVideo" controls>
-                <source id="videoSource" src="" type="video/mp4">
-                Tu navegador no soporta la reproducción de videos.
-            </video>
-        </div>
+   <!-- Modal para Videos -->
+<div id="videoModal" class="modal">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeVideoModal()">Cerrar</button>
+        <video id="programVideo" controls>
+            <source id="videoSource" src="" type="video/mp4">
+            Tu navegador no soporta la reproducción de videos.
+        </video>
     </div>
+</div>
 
     <!-- Sección de Contáctanos -->
-    <section id="contact" class="contact-section">
-        <h2 data-lang="es">Contáctanos</h2>
-        <h2 data-lang="en" style="display:none;">Contact Us</h2>
-        
-        <div class="contact-container">
-            <!-- Formulario de contacto -->
-            <form id="contact-form">
-                <label for="name">NOMBRE:</label>
-                <input type="text" id="name" name="name" placeholder="Escriba su nombre aquí" required>
-        
-                <label for="email">EMAIL:</label>
-                <input type="email" id="email" name="email" placeholder="email@address.com" required>
-        
-                <label for="message">MENSAJE:</label>
-                <textarea id="message" name="message" placeholder="Escribe aquí tu mensaje" required></textarea>
-        
-                <button type="submit">Enviar</button>
-            </form>
-        
-            <!-- Información de contacto -->
-            <div class="contact-info">
-                <h3>Información de Contacto</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Gómez Rendón y Los Ríos, Quito, Ecuador</p>
-                <p><i class="fas fa-phone-alt"></i> <a href="tel:0984268343">0984268343</a></p>
-                <p><i class="fas fa-envelope"></i> <a href="mailto:abadmonserrate342@gmail.com">abadmonserrate342@gmail.com</a></p>
+<section id="contact" class="contact-section">
+    <div class="contact-container">
+        <!-- Información de contacto en un contenedor transparente -->
+        <div class="contact-card">
+            <h2 class="contact-title">Información de Contacto</h2>
+            <div>
+                <img src="public/telefono.png" alt="Teléfono">
+                <p>+123-456-7890</p>
+            </div>
+            
+            <div>
+                <img src="public/correo.jpg" alt="Correo">
+                <p><a href="mailto:abadmonserrate342@gmail.com">abadmonserrate342@gmail.com</a></p>
+            </div>
+            
+            <div>
+                <img src="public/ubicacion.jpg" alt="Ubicación">
+                <p>Gómez Rendón y Los Ríos, Quito, Ecuador</p>
             </div>
         </div>
+
+        <!-- Formulario de contacto -->
+        <form id="contact-form">
+            <label for="name">NOMBRE:</label>
+            <input type="text" id="name" name="name" placeholder="Escriba su nombre aquí" required>
+    
+            <label for="email">EMAIL:</label>
+            <input type="email" id="email" name="email" placeholder="email@address.com" required>
+    
+            <label for="message">MENSAJE:</label>
+            <textarea id="message" name="message" placeholder="Escribe aquí tu mensaje" required></textarea>
+    
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</section>
+
         
         <!-- Mapa -->
         <div class="map-container">

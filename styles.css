@@ -9,6 +9,7 @@ body {
     font-family: 'Open Sans', sans-serif; /* Para el texto normal */
     background-color: #ADD8E6; /* Color de fondo */
 }
+
 h1, h2, h3 {
     font-family: 'Montserrat', sans-serif; /* Para los títulos */
 }
@@ -75,13 +76,14 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #02483d; /* Cambiado a #00BCFB */
+    color: #02483d;
     text-decoration: none;
 }
 
 nav ul li a:hover {
-    color: #02483d; /* Opcional: Color al hacer hover */
+    color: #02483d;
 }
+
 /* Ajustes del menú hamburguesa solo para móviles */
 @media (max-width: 768px) {
     .hamburger {
@@ -156,6 +158,7 @@ nav ul li a:hover {
     margin-bottom: 2rem;
     color: #02483d;
 }
+
 .about-description {
     margin-top: 1rem;
     font-size: 1.2rem;
@@ -201,6 +204,7 @@ nav ul li a:hover {
     list-style-type: none;
     padding: 0;
 }
+
 /* Sección Programas */
 .programs-section {
     padding: 2rem;
@@ -247,7 +251,7 @@ nav ul li a:hover {
     text-align: justify;
 }
 
-/* Estilos para el modal */
+/* Estilos del Modal */
 .modal {
     display: none;
     position: fixed;
@@ -275,14 +279,24 @@ nav ul li a:hover {
     height: auto;
 }
 
-.close {
+/* Estilo del Botón de Cierre */
+.close-btn {
     position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 30px;
+    top: -15px; /* Más cerca del borde superior */
+    right: 10px;
+    background-color: #ADD8E6; /* Mismo color que el fondo de la página */
+    color: black;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
     cursor: pointer;
-    color: #000;
+    font-size: 14px;
 }
+
+.close-btn:hover {
+    background-color: #9fc6dc; /* Un tono ligeramente más oscuro al pasar el ratón */
+}
+
 /* Sección de Contacto */
 .contact-section {
     padding: 2rem;
@@ -344,22 +358,31 @@ nav ul li a:hover {
     background-color: #008f7a;
 }
 
+/* Contenedor de Información de Contacto */
 .contact-info {
     flex: 1;
-    text-align: left;
+    text-align: center;
     max-width: 400px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco translúcido */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-image: url('public/fundacion.jpeg'); /* Fondo de imagen */
+    background-size: cover;
+    background-position: center;
 }
 
 .contact-info h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
     color: #02483d;
 }
 
 .contact-info p {
     font-size: 1.2rem;
     color: #555;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .contact-info a {
@@ -372,18 +395,30 @@ nav ul li a:hover {
     color: #008f7a;
 }
 
-.contact-info .address {
-    color: #00bfa5;
+.contact-info img {
+    width: 50px; /* Tamaño reducido del icono */
+    height: auto;
+    margin-bottom: 1rem;
 }
 
-.map-container {
-    margin-top: 2rem;
-}
+/* Ajustes Responsivos */
+@media (max-width: 768px) {
+    .contact-info {
+        max-width: 100%;
+        padding: 1rem;
+    }
 
-.map-container iframe {
-    border-radius: 10px;
-    width: 100%;
-    height: 400px;
+    .contact-info img {
+        width: 40px; /* Iconos más pequeños en móviles */
+    }
+
+    .contact-info h3 {
+        font-size: 1.5rem;
+    }
+
+    .contact-info p {
+        font-size: 1rem;
+    }
 }
 
 /* Footer */
@@ -397,48 +432,4 @@ footer {
 footer p {
     margin: 0;
     font-size: 1rem;
-}
-/* Estilos Responsivos */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        position: fixed;
-        top: 0;
-        left: -100%;
-        background-color: #ADD8E6; /* Color de fondo para la barra de navegación en modo móvil */
-        width: 250px;
-        height: 100%;
-        transition: left 0.3s ease-in-out;
-        z-index: 1000; /* Asegúrate de que esté por encima de todo */
-    }
-
-    nav ul.nav-active {
-        left: 0;
-    }
-    
-
-    .center-layout {
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
-    }
-
-    .card {
-        width: 90%;
-        margin-bottom: 1rem;
-    }
-
-    .card h3 {
-        font-size: 2rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .card p, .centered-values {
-        font-size: 1.1rem;
-    }
-
-    .hamburger {
-        display: flex;
-        background-color: #ADD8E6; /* Color de fondo para el menú hamburguesa */
-    }
 }
