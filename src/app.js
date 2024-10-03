@@ -1,3 +1,36 @@
+document.addEventListener('DOMContentLoaded', function () {
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('nav');
+    const navLinks = document.querySelectorAll('nav ul li a');
+
+    // Abre el menú hamburguesa
+    hamburger.addEventListener('click', () => {
+        nav.classList.toggle('nav-active');
+        if (nav.classList.contains('nav-active')) {
+            document.body.style.overflow = 'hidden';  // Evita el scroll en la vista móvil
+        } else {
+            document.body.style.overflow = 'auto';  // Restaura el scroll
+        }
+    });
+
+    // Cierra el menú al hacer clic en una opción
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('nav-active');
+            document.body.style.overflow = 'auto';  // Restaura el scroll
+        });
+    });
+
+    // Cierra el menú al hacer clic fuera de él
+    document.addEventListener('click', (e) => {
+        if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+            nav.classList.remove('nav-active');
+            document.body.style.overflow = 'auto';  // Restaura el scroll
+        }
+    });
+});
+
+// Slider automático
 let slideIndex = 0;
 showSlides();
 
@@ -11,9 +44,10 @@ function showSlides() {
         slideIndex = 1;
     }
     slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 5000);
+    setTimeout(showSlides, 5000);  // Cambia la diapositiva cada 5 segundos
 }
 
+// Abre el modal de video
 function openVideoModal(videoSrc) {
     const modal = document.getElementById('videoModal');
     const videoSource = document.getElementById('videoSource');
@@ -25,6 +59,7 @@ function openVideoModal(videoSrc) {
     videoElement.play();  // Reproduce el video
 }
 
+// Cierra el modal de video
 function closeVideoModal() {
     const modal = document.getElementById('videoModal');
     const videoElement = document.getElementById('programVideo');
@@ -36,7 +71,7 @@ function closeVideoModal() {
 
 // Función para cambiar de diapositiva con flechas
 function changeSlide(n) {
-    showSlides((slideIndex += n));
+    showSlides(slideIndex += n);
 }
 
 // Función para cambiar el idioma
@@ -51,10 +86,23 @@ function changeLang(lang) {
     });
 }
 
-// Función para alternar el menú hamburguesa en móviles
+// Open and close the hamburger menu with logo and responsive styling
 function toggleMenu() {
     const nav = document.querySelector('nav ul');
-    nav.classList.toggle('nav-active');
+    const overlay = document.querySelector('.nav-overlay');
+    document.body.classList.toggle('nav-open');
+    
+    // Close menu when clicking outside of it
+    overlay.addEventListener('click', () => {
+        document.body.classList.remove('nav-open');
+    });
+
+    // Close menu when selecting an option
+    nav.querySelectorAll('li').forEach(item => {
+        item.addEventListener('click', () => {
+            document.body.classList.remove('nav-open');
+        });
+    });
 }
 
 // Función para enviar formulario de contacto mediante POST al backend

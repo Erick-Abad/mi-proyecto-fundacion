@@ -6,16 +6,22 @@
 }
 
 body {
-    font-family: 'Open Sans', sans-serif; /* Para el texto normal */
-    background-color: #ADD8E6; /* Color de fondo */
+    font-family: 'Open Sans', sans-serif;
+    background-color: #ADD8E6;
 }
 
 h1, h2, h3 {
-    font-family: 'Montserrat', sans-serif; /* Para los títulos */
+    font-family: 'Montserrat', sans-serif;
+}
+header nav {
+    display: flex;
+    justify-content: space-between; /* Distribuye el espacio equitativamente entre los elementos */
+    align-items: center;
+    padding: 0 2rem; /* Puedes ajustar este valor para cambiar el margen interior de los lados */
 }
 
 header {
-    background-color: #ADD8E6; /* Color de fondo para la barra de navegación */
+    background-color: #ADD8E6;
     color: white;
     padding: 1rem;
     display: flex;
@@ -29,9 +35,9 @@ header {
     height: auto;
 }
 
-/* Menú hamburguesa */
+/* Menú hamburguesa para móviles */
 .hamburger {
-    display: none; /* Se mostrará en móviles */
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -41,8 +47,8 @@ header {
     right: 1rem;
     width: 50px;
     height: 50px;
-    background-color: #ADD8E6; /* Color azul */
-    border-radius: 50%; /* Forma redonda */
+    background-color: #ADD8E6;
+    border-radius: 50%;
     z-index: 1000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -54,6 +60,40 @@ header {
     margin: 4px 0;
 }
 
+/* Menú de navegación */
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem; /* Espacio entre los elementos del menú */
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+nav ul li {
+    margin-right: 2rem;
+}
+
+nav ul li a {
+    color: #02483d;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #008f7a;
+}
+
+/* Botón de cambio de idioma */
 .lang-toggle {
     display: flex;
     gap: 1rem;
@@ -66,49 +106,40 @@ header {
     cursor: pointer;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-}
-
-nav ul li {
-    margin: 0 1rem;
-}
-
-nav ul li a {
-    color: #02483d;
-    text-decoration: none;
-}
-
-nav ul li a:hover {
-    color: #02483d;
-}
-
-/* Ajustes del menú hamburguesa solo para móviles */
+/* Estilos de navegación para dispositivos móviles */
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
     }
 
-    nav ul {
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: -100%;
-        background-color: #333;
-        width: 100%;
-        transition: left 0.3s ease-in-out;
+    .logo {
+        display: none;
     }
 
-    .nav-active {
-        left: 0;
+    nav {
+        display: none;
+        background-color: #ADD8E6;
         position: fixed;
         top: 0;
-        width: 250px;
+        left: 0;
         height: 100%;
-        background-color: #333;
-        z-index: 999;
-        transition: left 0.3s ease-in-out;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        z-index: 1000;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    nav.nav-active {
+        transform: translateX(0);
+        display: flex;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
     }
 
     nav ul li {
@@ -142,15 +173,20 @@ nav ul li a:hover {
 }
 
 @keyframes fadeEffect {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 /* Sección ¿Quiénes Somos? */
 .about-section {
     text-align: center;
     padding: 2rem;
-    background-color: #ADD8E6; /* Color de fondo */
+    background-color: #ADD8E6;
 }
 
 .about-heading {
@@ -194,7 +230,8 @@ nav ul li a:hover {
     margin-bottom: 1rem;
 }
 
-.card p, .centered-values {
+.card p,
+.centered-values {
     font-size: 1.2rem;
     color: #555;
     text-align: center;
@@ -205,10 +242,32 @@ nav ul li a:hover {
     padding: 0;
 }
 
+/* Responsividad en la Sección ¿Quiénes Somos? */
+@media (max-width: 768px) {
+    .center-layout {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    .card h3 {
+        font-size: 1.5rem;
+    }
+
+    .card p,
+    .centered-values {
+        font-size: 1.1rem;
+    }
+}
+
 /* Sección Programas */
 .programs-section {
     padding: 2rem;
-    background-color: #ADD8E6; /* Color de fondo */
+    background-color: #ADD8E6;
     text-align: center;
 }
 
@@ -282,9 +341,9 @@ nav ul li a:hover {
 /* Estilo del Botón de Cierre */
 .close-btn {
     position: absolute;
-    top: -15px; /* Más cerca del borde superior */
+    top: -15px;
     right: 10px;
-    background-color: #ADD8E6; /* Mismo color que el fondo de la página */
+    background-color: #ADD8E6;
     color: black;
     border: none;
     padding: 6px 12px;
@@ -294,20 +353,20 @@ nav ul li a:hover {
 }
 
 .close-btn:hover {
-    background-color: #9fc6dc; /* Un tono ligeramente más oscuro al pasar el ratón */
+    background-color: #9fc6dc;
 }
 
 /* Sección de Contacto */
 .contact-section {
     padding: 2rem;
     text-align: center;
-    background-color: #ADD8E6; /* Color de fondo */
+    background-color: #ADD8E6;
 }
 
 .contact-section h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
-    color: #02483d; /* Cambiado a un color más oscuro para contraste */
+    color: #02483d;
 }
 
 .contact-container {
@@ -330,7 +389,8 @@ nav ul li a:hover {
     color: #333;
 }
 
-#contact-form input, #contact-form textarea {
+#contact-form input,
+#contact-form textarea {
     width: 100%;
     padding: 0.75rem;
     margin-bottom: 1rem;
@@ -364,11 +424,11 @@ nav ul li a:hover {
     text-align: center;
     max-width: 400px;
     margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco translúcido */
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-image: url('public/fundacion.jpeg'); /* Fondo de imagen */
+    background-image: url('public/contacto/fundacion.jpeg'); /* Imagen de fondo */
     background-size: cover;
     background-position: center;
 }
@@ -396,20 +456,52 @@ nav ul li a:hover {
 }
 
 .contact-info img {
-    width: 50px; /* Tamaño reducido del icono */
+    width: 50px;
     height: auto;
     margin-bottom: 1rem;
 }
 
+/* Ajustes de tamaño para los íconos en la sección de contacto */
+.contact-card img {
+    width: 40px;
+    height: auto;
+    margin: 10px 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-card p {
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Centrado y ajuste de la tarjeta de contacto */
+.contact-card {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 /* Ajustes Responsivos */
 @media (max-width: 768px) {
+    .contact-card img {
+        width: 50px;
+    }
+
     .contact-info {
         max-width: 100%;
         padding: 1rem;
     }
 
     .contact-info img {
-        width: 40px; /* Iconos más pequeños en móviles */
+        width: 40px;
     }
 
     .contact-info h3 {
@@ -419,11 +511,21 @@ nav ul li a:hover {
     .contact-info p {
         font-size: 1rem;
     }
+
+    .contact-card {
+        font-weight: 700;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .contact-title {
+        font-size: 1.2rem;
+    }
 }
 
 /* Footer */
 footer {
-    background-color: #ADD8E6; /* Color de fondo */
+    background-color: #ADD8E6;
     color: white;
     text-align: center;
     padding: 1rem;

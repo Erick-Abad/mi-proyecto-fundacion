@@ -6,7 +6,6 @@
     <title>TRANSFORMADOS Fundación Internacional</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-
 </head>
 <body>
     <header>
@@ -19,13 +18,13 @@
             <div class="bar"></div>
             <div class="bar"></div>
         </div>
-        <nav>
+        <nav class="nav-overlay">
             <ul class="nav-links">
-                <li><a href="#home" data-lang="es">Inicio</a><a href="#home" data-lang="en" style="display:none;">Home</a></li>
-                <li><a href="#about" data-lang="es">Nosotros</a><a href="#about" data-lang="en" style="display:none;">About Us</a></li>
-                <li><a href="#programs" data-lang="es">Nuestros Programas</a><a href="#programs" data-lang="en" style="display:none;">Our Programs</a></li>
-                <li><a href="#help" data-lang="es">Cómo Ayudar</a><a href="#help" data-lang="en" style="display:none;">How to Help</a></li>
-                <li><a href="#contact" data-lang="es">Contáctanos</a><a href="#contact" data-lang="en" style="display:none;">Contact Us</a></li>
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#about">Nosotros</a></li>
+                <li><a href="#programs">Nuestros Programas</a></li>
+                <li><a href="#help">Cómo Ayudar</a></li>
+                <li><a href="#contact">Contáctanos</a></li>
             </ul>
         </nav>
         <div class="lang-toggle">
@@ -153,22 +152,25 @@
 
     <!-- Sección de Contáctanos -->
 <section id="contact" class="contact-section">
+    <h2 data-lang="es">Contactanos</h2>
+    
+        <h2 data-lang="en" style="display:none;">contact us</h2>
     <div class="contact-container">
         <!-- Información de contacto en un contenedor transparente -->
         <div class="contact-card">
             <h2 class="contact-title">Información de Contacto</h2>
             <div>
-                <img src="public/telefono.png" alt="Teléfono">
+                <img src="public/contacto/telefono.png" alt="Teléfono">
                 <p>+123-456-7890</p>
             </div>
             
             <div>
-                <img src="public/correo.jpg" alt="Correo">
+                <img src="public/contacto/correo.png" alt="Correo">
                 <p><a href="mailto:abadmonserrate342@gmail.com">abadmonserrate342@gmail.com</a></p>
             </div>
             
             <div>
-                <img src="public/ubicacion.jpg" alt="Ubicación">
+                <img src="public/contacto/ubicacion.png" alt="Ubicación">
                 <p>Gómez Rendón y Los Ríos, Quito, Ecuador</p>
             </div>
         </div>
@@ -189,25 +191,23 @@
     </div>
 </section>
 
-        
-        <!-- Mapa -->
-        <div class="map-container">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.493901019633!2d-78.50786602150304!3d-0.19133796313284277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d599c1ad34016b%3A0x7b4f4cf9f5d18a47!2sG%C3%B3mez%20Rend%C3%B3n%20%26%20Los%20R%C3%ADos%2C%20Quito%20170103%2C%20Ecuador!5e0!3m2!1ses!2sus!4v1694697123456!5m2!1ses!2sus" 
-                width="100%" 
-                height="400" 
-                frameborder="0" 
-                style="border:0;" 
-                allowfullscreen="" 
-                aria-hidden="false" 
-                tabindex="0"></iframe>
-        </div>
-    </section>
-    
-    <footer>
-        <p>&copy; 2024 TRANSFORMADOS Fundación Internacional. Todos los derechos reservados.</p>
-    </footer>
+<!-- Mapa -->
+<div class="map-container">
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.493901019633!2d-78.50786602150304!3d-0.19133796313284277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d599c1ad34016b%3A0x7b4f4cf9f5d18a47!2sG%C3%B3mez%20Rend%C3%B3n%20%26%20Los%20R%C3%ADos%2C%20Quito%20170103%2C%20Ecuador!5e0!3m2!1ses!2sus!4v1694697123456!5m2!1ses!2sus" 
+        width="100%" 
+        height="400" 
+        frameborder="0" 
+        style="border:0;" 
+        allowfullscreen="" 
+        aria-hidden="false" 
+        tabindex="0"></iframe>
+</div>
 
-    <script src="src/app.js"></script>
+<footer>
+    <p>&copy; 2024 TRANSFORMADOS Fundación Internacional. Todos los derechos reservados.</p>
+</footer>
+
+<script src="src/app.js"></script>
 </body>
 </html>
