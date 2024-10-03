@@ -369,11 +369,14 @@ nav ul li a:hover {
     color: #02483d;
 }
 
+
 .contact-container {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
     flex-wrap: wrap;
+    padding: 2rem;
+    gap: 2rem; /* Espacio entre los contenedores */
 }
 
 #contact-form {
@@ -417,20 +420,60 @@ nav ul li a:hover {
 #contact-form button:hover {
     background-color: #008f7a;
 }
-
-/* Contenedor de Información de Contacto */
-.contact-info {
+.contact-info,
+#contact-form {
     flex: 1;
-    text-align: center;
     max-width: 400px;
-    margin: 0 auto;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor de Información de Contacto */
+.contact-info {
     background-image: url('public/contacto/fundacion.jpeg'); /* Imagen de fondo */
     background-size: cover;
     background-position: center;
+}
+#contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#contact-form label {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #333;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#contact-form textarea {
+    height: 150px;
+}
+
+#contact-form button {
+    background-color: #00bfa5;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+}
+
+#contact-form button:hover {
+    background-color: #008f7a;
 }
 
 .contact-info h3 {
@@ -483,7 +526,7 @@ nav ul li a:hover {
     background-color: rgba(255, 255, 255, 0.8);
     padding: 2rem;
     border-radius: 10px;
-    max-width: 300px;
+    max-width: 400px;
     margin: auto;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
