@@ -114,17 +114,17 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
     const message = document.getElementById('message').value;
 
     // Usar fetch para enviar los datos al servidor
-    fetch('http://localhost:3000/send-email', {
+    fetch('/api/send-email', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            name: name,
-            email: email,
-            message: message,
+          name: name,
+          email: email,
+          message: message,
         })
-    })
+      })
     .then(response => response.text())
     .then(data => {
         alert('Mensaje enviado correctamente');
