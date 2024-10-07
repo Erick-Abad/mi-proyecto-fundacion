@@ -1,18 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Incluye la fuente Inter desde Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TRANSFORMADOS Fundación Internacional</title>
-
-    <!-- Enlace al archivo de estilos -->
     <link rel="stylesheet" href="styles.css">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/public/favicon/LogoPrincipal.png">
-    
-    <!-- Fuentes de Google -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="public/favicon/LogoPrincipal.png">
 </head>
 <body>
     <header>
@@ -27,7 +22,7 @@
         </div>
         <nav class="nav-overlay">
             <ul class="nav-links">
-                <li><a href="#home">Inicio</a></li>
+                <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#about">Nosotros</a></li>
                 <li><a href="#programs">Nuestros Programas</a></li>
                 <li><a href="#help">Cómo Ayudar</a></li>
@@ -39,182 +34,161 @@
             <button onclick="changeLang('en')">EN</button>
         </div>
     </header>
-
-    <!-- Slider Section con flechas -->
-    <section class="slider">
-        <div class="arrow left-arrow" onclick="changeSlide(-1)">&#10094;</div>
-        <div class="slide fade">
-            <img src="public/slide1.jpeg" alt="Slide 1">
+    
+    <!-- Sección de Inicio -->
+    <section id="inicio" class="hero-section">
+        <div class="hero" style="background: url('public/activando3.jpg') no-repeat center center/cover; height: 100vh; position: relative;">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 data-es="Juntos por un mundo mejor" data-en="Together for a better world">Juntos por un mundo mejor</h1>
+                <p data-es="Trabajamos para mejorar la vida de las personas en situación de vulnerabilidad, promoviendo la educación, el desarrollo social y la salud integral." data-en="We work to improve the lives of people in vulnerable situations, promoting education, social development, and comprehensive health.">Trabajamos para mejorar la vida de las personas en situación de vulnerabilidad...</p>
+                <a href="#about" class="button" data-es="APRENDE MÁS" data-en="LEARN MORE">APRENDE MÁS</a>
+            </div>
         </div>
-        <div class="slide fade">
-            <img src="public/slide2.jpeg" alt="Slide 2">
-        </div>
-        <div class="slide fade">
-            <img src="public/slide3.jpeg" alt="Slide 3">
-        </div>
-        <div class="slide fade">
-            <img src="public/slide4.jpeg" alt="Slide 4">
-        </div>
-        <div class="arrow right-arrow" onclick="changeSlide(1)">&#10095;</div>
     </section>
 
+    <!-- Sección Nosotros -->
     <section id="about" class="about-section">
-        <h2 class="about-heading" data-lang="es">¿Quiénes Somos?</h2>
-        <h2 class="about-heading" data-lang="en" style="display:none;">Who We Are</h2>
+        <div class="hero-about" style="background: url('public/DSC00209.jpg') no-repeat center center/cover; height: 100vh; position: relative;">
+            <div class="hero-overlay"></div>
+            <div class="about-content">
+                <h1 data-es="Nosotros" data-en="About Us">Nosotros</h1>
+                <p data-es="Fundación Internacional Transformados es una organización..." data-en="Fundación Internacional Transformados is an organization...">
+                    Fundación Internacional Transformados es una organización sin fines de lucro dedicada a mejorar la calidad de vida de las comunidades más vulnerables. Nuestro principal objetivo es promover el bienestar social mediante programas que abarcan áreas esenciales como la educación, la salud, la nutrición y el desarrollo comunitario.
+                </p>
+            </div>
+        </div>
 
-        <p class="about-description" data-lang="es">
-            Somos un equipo comprometido con la transformación social y el bienestar de las comunidades vulnerables. Nuestra misión es promover la equidad y la inclusión a través de programas de beneficencia, labor social y apoyo comunitario.
-        </p>
-        <p class="about-description" data-lang="en" style="display:none;">
-            We are a team committed to social transformation and the well-being of vulnerable communities. Our mission is to promote equity and inclusion through charity programs, social work, and community support.
-        </p>
-
+        <!-- Misión, Visión, Valores dentro de la imagen de fondo -->
         <div class="center-layout">
             <!-- Misión -->
             <div class="card">
                 <img src="public/Mision.png" alt="Misión Icon" class="icon">
-                <h3 data-lang="es">MISIÓN</h3>
-                <h3 data-lang="en" style="display:none;">MISSION</h3>
-                <p class="justificado" data-lang="es">Asistir, empoderar y fortalecer a cada familia en el mundo a través de nuestros programas de desarrollo individual y comunitario.</p>
-                <p class="justificado" data-lang="en" style="display:none;">Assist, empower, and strengthen every family worldwide through our individual and community development programs.</p>
+                <h3 data-es="MISIÓN" data-en="MISSION">MISIÓN</h3>
+                <p data-es="Asistir, empoderar y fortalecer a cada familia en el mundo a través de nuestros programas de desarrollo individual y comunitario." data-en="Assist, empower, and strengthen every family worldwide through our individual and community development programs.">Asistir, empoderar y fortalecer a cada familia en el mundo a través de nuestros programas de desarrollo individual y comunitario.</p>
             </div>
-
+        
             <!-- Visión -->
             <div class="card">
                 <img src="public/Vision.png" alt="Visión Icon" class="icon">
-                <h3 data-lang="es">VISIÓN</h3>
-                <h3 data-lang="en" style="display:none;">VISION</h3>
-                <p class="justificado" data-lang="es">Contar con oficinas en varios países del mundo, trabajando con el corazón, de manera ética y profesional en la atención brindada a cada beneficiario.</p>
-                <p class="justificado" data-lang="en" style="display:none;">To have offices in various countries, working with heart, ethically and professionally, in the care provided to each beneficiary.</p>
+                <h3 data-es="VISIÓN" data-en="VISION">VISIÓN</h3>
+                <p data-es="Contar con oficinas en varios países del mundo, trabajando con el corazón, de manera ética y profesional en la atención brindada a cada beneficiario." data-en="To have offices in various countries, working with heart, ethically and professionally, in the care provided to each beneficiary.">Contar con oficinas en varios países del mundo, trabajando con el corazón, de manera ética y profesional en la atención brindada a cada beneficiario.</p>
             </div>
-
+        
             <!-- Valores -->
             <div class="card">
                 <img src="public/Valores.png" alt="Valores Icon" class="icon">
-                <h3 data-lang="es">VALORES</h3>
-                <h3 data-lang="en" style="display:none;">VALUES</h3>
-                <ul class="centered-values" data-lang="es">
+                <h3 data-es="VALORES" data-en="VALUES">VALORES</h3>
+                <ul class="centered-values" data-es="Excelencia, Integridad, Innovación, Responsabilidad Social, Compromiso" data-en="Excellence, Integrity, Innovation, Social Responsibility, Commitment">
                     <li>Excelencia</li>
                     <li>Integridad</li>
                     <li>Innovación</li>
                     <li>Responsabilidad Social</li>
                     <li>Compromiso</li>
                 </ul>
-                <ul class="centered-values" data-lang="en" style="display:none;">
-                    <li>Excellence</li>
-                    <li>Integrity</li>
-                    <li>Innovation</li>
-                    <li>Social Responsibility</li>
-                    <li>Commitment</li>
-                </ul>
             </div>
         </div>
     </section>
 
-    <!-- Sección de Programas -->
+    <!-- Sección Programas -->
     <section id="programs" class="programs-section">
-        <h2 data-lang="es">Nuestros Programas</h2>
-        <h2 data-lang="en" style="display:none;">Our Programs</h2>
+        <h2 data-es="Nuestros Programas" data-en="Our Programs">Nuestros Programas</h2>
         <div class="programs-container">
             <!-- Programa 1: Activando Corazones -->
             <div class="program-card" id="activando-corazones" onclick="openVideoModal('Activando.mp4')">
                 <img src="public/Donar.png" alt="Activando Corazones" class="program-icon">
-                <h3 data-lang="es">Activando Corazones</h3>
-                <p data-lang="es">Dirigido a personas que deseen formar parte de nuestro staff de donantes o voluntarios...</p>
+                <h3 data-es="Activando Corazones" data-en="Activating Hearts">Activando Corazones</h3>
+                <p data-es="Dirigido a personas que deseen formar parte de nuestro staff de donantes o voluntarios..." data-en="For those who wish to be part of our donor or volunteer staff...">Dirigido a personas que deseen formar parte de nuestro staff de donantes...</p>
             </div>
             
             <!-- Programa 2: Años Dorados -->
             <div class="program-card" id="años-dorados" onclick="openVideoModal('año.mp4')">
                 <img src="public/Años.png" alt="Años Dorados" class="program-icon">
-                <h3 data-lang="es">Años Dorados</h3>
-                <p data-lang="es">Dirigido a los adultos mayores residentes del Hogar San José...</p>
+                <h3 data-es="Años Dorados" data-en="Golden Years">Años Dorados</h3>
+                <p data-es="Dirigido a los adultos mayores residentes del Hogar San José..." data-en="For senior residents of the Hogar San José...">Dirigido a los adultos mayores residentes del Hogar San José...</p>
             </div>
 
             <!-- Programa 3: Mi Amor Trasciende -->
             <div class="program-card" id="mi-amor" onclick="openVideoModal('amor.mp4')">
                 <img src="public/Familia.png" alt="Mi Amor Trasciende" class="program-icon">
-                <h3 data-lang="es">Mi Amor Trasciende</h3>
-                <p data-lang="es">Dirigido a familias, cuyo(s) miembro(s) menor(es) de edad padecen enfermedades catastróficas...</p>
+                <h3 data-es="Mi Amor Trasciende" data-en="My Love Transcends">Mi Amor Trasciende</h3>
+                <p data-es="Dirigido a familias, cuyo(s) miembro(s) menor(es) de edad padecen enfermedades catastróficas..." data-en="For families whose minor members suffer from catastrophic diseases...">Dirigido a familias, cuyo(s) miembro(s) menor(es) de edad padecen enfermedades catastróficas...</p>
             </div>
 
             <!-- Programa 4: Sonrisas de Luz -->
             <div class="program-card" id="sonrisas-luz" onclick="openVideoModal('sonrisa.mp4')">
                 <img src="public/Graduacion.png" alt="Sonrisas de Luz" class="program-icon">
-                <h3 data-lang="es">Sonrisas de Luz</h3>
-                <p data-lang="es">Dirigido a la comunidad estudiantil donde brindamos apoyo psicoterapéutico...</p>
+                <h3 data-es="Sonrisas de Luz" data-en="Smiles of Light">Sonrisas de Luz</h3>
+                <p data-es="Dirigido a la comunidad estudiantil donde brindamos apoyo psicoterapéutico..." data-en="For the student community where we provide psychotherapeutic support...">Dirigido a la comunidad estudiantil donde brindamos apoyo psicoterapéutico...</p>
             </div>
         </div>
     </section>
 
-   <!-- Modal para Videos -->
-<div id="videoModal" class="modal">
-    <div class="modal-content">
-        <button class="close-btn" onclick="closeVideoModal()">Cerrar</button>
-        <video id="programVideo" controls>
-            <source id="videoSource" src="" type="video/mp4">
-            Tu navegador no soporta la reproducción de videos.
-        </video>
-    </div>
-</div>
-
-    <!-- Sección de Contáctanos -->
-<section id="contact" class="contact-section">
-    <h2 data-lang="es">Contactanos</h2>
-    
-        <h2 data-lang="en" style="display:none;">contact us</h2>
-    <div class="contact-container">
-        <!-- Información de contacto en un contenedor transparente -->
-        <div class="contact-card">
-            <h2 class="contact-title">Información de Contacto</h2>
-            <div>
-                <img src="public/contacto/telefono.png" alt="Teléfono">
-                <p>+0989869617</p>
-            </div>
-            
-            <div>
-                <img src="public/contacto/correo.png" alt="Correo">
-                <p><a href="mailto:transformadosdecorazon@outlook.com">transformadosdecorazon@outlook.com</a></p>
-            </div>
-            
-            <div>
-                <img src="public/contacto/ubicacion.png" alt="Ubicación">
-                <p>Kennedy Nueva, calle Dr. LUIS Cordero Gomez 201</p>
-            </div>
+    <!-- Modal para Videos -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeVideoModal()">Cerrar</button>
+            <video id="programVideo" controls>
+                <source id="videoSource" src="" type="video/mp4">
+                Tu navegador no soporta la reproducción de videos.
+            </video>
         </div>
-
-        <!-- Formulario de contacto -->
-        <form id="contact-form">
-            <label for="name">NOMBRE:</label>
-            <input type="text" id="name" name="name" placeholder="Escriba su nombre aquí" required>
-    
-            <label for="email">EMAIL:</label>
-            <input type="email" id="email" name="email" placeholder="email@address.com" required>
-    
-            <label for="message">MENSAJE:</label>
-            <textarea id="message" name="message" placeholder="Escribe aquí tu mensaje" required></textarea>
-    
-            <button type="submit">Enviar</button>
-        </form>
     </div>
-</section>
 
-<!-- Mapa -->
-<div class="map-container">
-    <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.493901019633!2d-78.50786602150304!3d-0.19133796313284277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d599c1ad34016b%3A0x7b4f4cf9f5d18a47!2sG%C3%B3mez%20Rend%C3%B3n%20%26%20Los%20R%C3%ADos%2C%20Quito%20170103%2C%20Ecuador!5e0!3m2!1ses!2sus!4v1694697123456!5m2!1ses!2sus" 
-        width="100%" 
-        height="400" 
-        frameborder="0" 
-        style="border:0;" 
-        allowfullscreen="" 
-        aria-hidden="false" 
-        tabindex="0"></iframe>
-</div>
+    <!-- Sección de Contacto -->
+    <section id="contact" class="contact-section">
+        <h2 data-es="Contáctanos" data-en="Contact Us">Contáctanos</h2>
+        <div class="contact-container">
+            <!-- Información de contacto en un contenedor transparente -->
+            <div class="contact-card">
+                <h2 data-es="Información de Contacto" data-en="Contact Information">Información de Contacto</h2>
+                <div>
+                    <img src="public/contacto/telefono.png" alt="Teléfono">
+                    <p>+0989869617</p>
+                </div>
+                <div>
+                    <img src="public/contacto/correo.png" alt="Correo">
+                    <p><a href="mailto:transformadosdecorazon@outlook.com">transformadosdecorazon@outlook.com</a></p>
+                </div>
+                <div>
+                    <img src="public/contacto/ubicacion.png" alt="Ubicación">
+                    <p>Kennedy Nueva, calle Dr. LUIS Cordero Gomez 201</p>
+                </div>
+            </div>
 
-<footer>
-    <p>&copy; 2024 TRANSFORMADOS Fundación Internacional. Todos los derechos reservados.</p>
-</footer>
+            <!-- Formulario de contacto -->
+            <form id="contact-form">
+                <label for="name" data-es="NOMBRE:" data-en="NAME:">NOMBRE:</label>
+                <input type="text" id="name" name="name" placeholder="Escriba su nombre aquí" required>
+        
+                <label for="email" data-es="EMAIL:" data-en="EMAIL:">EMAIL:</label>
+                <input type="email" id="email" name="email" placeholder="email@address.com" required>
+        
+                <label for="message" data-es="MENSAJE:" data-en="MESSAGE:">MENSAJE:</label>
+                <textarea id="message" name="message" placeholder="Escribe aquí tu mensaje" required></textarea>
+        
+                <button type="submit" data-es="Enviar" data-en="Send">Enviar</button>
+            </form>
+        </div>
+    </section>
 
-<script src="src/app.js"></script>
+    <!-- Mapa -->
+    <div class="map-container">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.493901019633!2d-78.50786602150304!3d-0.19133796313284277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d599c1ad34016b%3A0x7b4f4cf9f5d18a47!2sG%C3%B3mez%20Rend%C3%B3n%20%26%20Los%20R%C3%ADos%2C%20Quito%20170103%2C%20Ecuador!5e0!3m2!1ses!2sus!4v1694697123456!5m2!1ses!2sus" 
+            width="100%" 
+            height="400" 
+            frameborder="0" 
+            style="border:0;" 
+            allowfullscreen="" 
+            aria-hidden="false" 
+            tabindex="0"></iframe>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 TRANSFORMADOS Fundación Internacional. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="src/app.js"></script>
 </body>
 </html>

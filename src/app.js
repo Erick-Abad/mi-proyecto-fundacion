@@ -30,22 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Slider automático
-let slideIndex = 0;
-showSlides();
 
-function showSlides() {
-    let slides = document.getElementsByClassName("slide");
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) {
-        slideIndex = 1;
-    }
-    slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 5000);  // Cambia la diapositiva cada 5 segundos
-}
 
 // Abre el modal de video
 function openVideoModal(videoSrc) {
@@ -75,13 +60,20 @@ function changeSlide(n) {
 }
 
 // Función para cambiar el idioma
+// Función para cambiar el idioma
 function changeLang(lang) {
-    const elements = document.querySelectorAll('[data-lang]');
+    // Selecciona todos los elementos que tienen data-es y data-en
+    const elements = document.querySelectorAll('[data-es], [data-en]');
+
+    // Itera sobre cada elemento y cambia su texto según el idioma seleccionado
     elements.forEach(el => {
-        if (el.getAttribute('data-lang') === lang) {
-            el.style.display = 'block';
-        } else {
-            el.style.display = 'none';
+        const textEs = el.getAttribute('data-es');
+        const textEn = el.getAttribute('data-en');
+
+        if (lang === 'es') {
+            el.textContent = textEs;
+        } else if (lang === 'en') {
+            el.textContent = textEn;
         }
     });
 }

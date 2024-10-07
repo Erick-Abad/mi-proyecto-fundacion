@@ -6,13 +6,14 @@
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    background-color: #ADD8E6;
+    font-family: 'Inter', sans-serif;
+    background-color: #131e3d;
 }
 
 h1, h2, h3 {
     font-family: 'Montserrat', sans-serif;
 }
+
 header nav {
     display: flex;
     justify-content: space-between; /* Distribuye el espacio equitativamente entre los elementos */
@@ -21,18 +22,306 @@ header nav {
 }
 
 header {
-    background-color: #ADD8E6;
+    background-color: #131e3d;
     color: white;
-    padding: 1rem;
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
 }
 
 .logo img {
     width: 150px;
     height: auto;
+}
+
+/* Menú de navegación */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav ul li {
+    margin-right: 2rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+    color: #f8b400;
+}
+
+/* Estilos para la sección Nosotros */
+.hero-about {
+    position: relative;
+    height: 100vh;
+    background: url('public/DSC00209.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-about .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(19, 30, 61, 0.7); /* Transparencia sobre la imagen de fondo */
+    z-index: 1;
+}
+
+.about-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    padding: 2rem;
+    max-width: 800px;
+    text-align: center;
+}
+
+.about-content h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.about-content p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.8;
+    text-align: justify;
+    margin-bottom: 2rem;
+}
+
+/* Estilos de las tarjetas Misión, Visión y Valores */
+.center-layout {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2rem;
+    text-align: center;
+}
+
+.card {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco transparente */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+    font-size: 1.8rem;
+    color: #00bfa5;
+    margin-bottom: 1rem;
+}
+
+.card p {
+    font-size: 1.2rem;
+    color: #555;
+    text-align: justify;
+}
+
+.centered-values {
+    list-style-type: none;
+    padding: 0;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.centered-values li {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsividad para dispositivos móviles */
+@media (max-width: 768px) {
+    .center-layout {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    .card h3 {
+        font-size: 1.5rem;
+    }
+
+    .card p,
+    .centered-values {
+        font-size: 1.1rem;
+    }
+}
+/* Estilos de la sección de inicio */
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url('./public/activando3.jpg') no-repeat center center/cover;
+}
+
+.hero-about {
+    position: relative;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-about .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(19, 30, 61, 0.7); /* Transparencia sobre la imagen de fondo */
+    z-index: 1;
+}
+
+.about-content {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+    max-width: 800px;
+}
+
+.about-content h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.about-content p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.8;
+    text-align: justify;
+    margin-bottom: 2rem;
+}
+
+/* Ajusta el contenido de las tarjetas en la sección de misión, visión y valores */
+.center-layout {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2rem;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+}
+
+.card {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco transparente */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+    font-size: 1.8rem;
+    color: #00bfa5;
+    margin-bottom: 1rem;
+}
+
+.card p {
+    font-size: 1.2rem;
+    color: #555;
+    text-align: justify;
+}
+
+.centered-values {
+    list-style-type: none;
+    padding: 0;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.centered-values li {
+    margin-bottom: 0.5rem;
+}
+
+.hero-content a {
+    display: inline-block;
+    background-color: #ff5733;
+    color: white;
+    padding: 0.75rem 1.5rem; /* Tamaño más pequeño del botón */
+    text-decoration: none;
+    font-size: 1rem; /* Tamaño de la fuente más pequeño */
+    border-radius: 5px;
+    text-align: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(19, 30, 61, 0.8); /* Transparencia sobre la imagen de fondo */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    padding: 2rem;
+    max-width: 600px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh; /* Asegura que el contenido esté centrado verticalmente */
+    margin-left: 5%; /* Mueve el contenido hacia la izquierda */
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    text-align: justify;
+}
+
+.hero-content a {
+    display: inline-block;
+    background-color: #ff5733;
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    font-size: 1.25rem;
+    border-radius: 5px;
+}
+
+.hero-content a:hover {
+    background-color: #e14a2a;
 }
 
 /* Menú hamburguesa para móviles */
@@ -60,83 +349,20 @@ header {
     margin: 4px 0;
 }
 
-/* Menú de navegación */
-nav {
+/* Estilos para el contenedor hero */
+.hero-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(19, 30, 61, 0.7);
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-    flex: 1;
+    justify-content: center;
+    z-index: 1;
 }
 
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 2rem; /* Espacio entre los elementos del menú */
-    margin: 0;
-    padding: 0;
-    align-items: center;
-}
-
-nav ul li {
-    margin-right: 2rem;
-}
-
-nav ul li a {
-    color: #02483d;
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-nav ul li a:hover {
-    color: #008f7a;
-}
-
-/* Botón de cambio de idioma */
-.lang-toggle {
-    display: flex;
-    gap: 1rem;
-}
-
-.lang-toggle button {
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-}
-
-/* Estilos de navegación para dispositivos móviles */
+/* Ajustes de navegación para dispositivos móviles */
 @media (max-width: 768px) {
-    .hamburger {
-        display: flex;
-    }
-
-    .logo {
-        display: none;
-    }
-
-    nav {
-        display: none;
-        background-color: #ADD8E6;
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        z-index: 1000;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
-    }
-
-    nav.nav-active {
-        transform: translateX(0);
-        display: flex;
-    }
-
     nav ul {
         flex-direction: column;
         align-items: center;
@@ -145,6 +371,209 @@ nav ul li a:hover {
     nav ul li {
         margin: 1rem 0;
     }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .logo {
+        display: none;
+    }
+}/* Estilos del Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.modal-content video {
+    width: 100%;
+    height: auto;
+}
+
+/* Sección de Contacto */
+.contact-section {
+    padding: 2rem;
+    text-align: center;
+    background-color: #ADD8E6;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+#contact-form,
+.contact-info {
+    flex: 1;
+    max-width: 400px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#contact-form label {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #333;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#contact-form textarea {
+    height: 150px;
+}
+
+#contact-form button {
+    background-color: #00bfa5;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+}
+
+#contact-form button:hover {
+    background-color: #008f7a;
+}
+
+.contact-info h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #02483d;
+}
+
+.contact-info p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.contact-info a {
+    color: #00bfa5;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: none;
+    color: #008f7a;
+}
+
+.contact-info img {
+    width: 50px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+/* Ajustes de tamaño para los íconos en la sección de contacto */
+.contact-card img {
+    width: 40px;
+    height: auto;
+    margin: 10px 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-card p {
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Centrado y ajuste de la tarjeta de contacto */
+.contact-card {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajustes Responsivos */
+@media (max-width: 768px) {
+    .contact-card img {
+        width: 50px;
+    }
+
+    .contact-info {
+        max-width: 100%;
+        padding: 1rem;
+    }
+
+    .contact-info img {
+        width: 40px;
+    }
+
+    .contact-info h3 {
+        font-size: 1.5rem;
+    }
+
+    .contact-info p {
+        font-size: 1rem;
+    }
+
+    .contact-card {
+        font-weight: 700;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .contact-title {
+        font-size: 1.2rem;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #ADD8E6;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
 }
 
 /* Slider */
@@ -338,243 +767,3 @@ nav ul li a:hover {
     height: auto;
 }
 
-/* Estilo del Botón de Cierre */
-.close-btn {
-    position: absolute;
-    top: -15px;
-    right: 10px;
-    background-color: #ADD8E6;
-    color: black;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-}
-
-.close-btn:hover {
-    background-color: #9fc6dc;
-}
-
-/* Sección de Contacto */
-.contact-section {
-    padding: 2rem;
-    text-align: center;
-    background-color: #ADD8E6;
-}
-
-.contact-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: #02483d;
-}
-
-
-.contact-container {
-    display: flex;
-    justify-content: center; /* Centrar horizontalmente */
-    align-items: center; /* Centrar verticalmente */
-    flex-wrap: wrap;
-    padding: 2rem;
-    gap: 2rem; /* Espacio entre los contenedores */
-}
-
-#contact-form {
-    flex: 1;
-    margin-right: 2rem;
-    max-width: 400px;
-}
-
-#contact-form label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-    color: #333;
-}
-
-#contact-form input,
-#contact-form textarea {
-    width: 100%;
-    padding: 0.75rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-#contact-form textarea {
-    height: 150px;
-}
-
-#contact-form button {
-    background-color: #00bfa5;
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    font-size: 1rem;
-}
-
-#contact-form button:hover {
-    background-color: #008f7a;
-}
-.contact-info,
-#contact-form {
-    flex: 1;
-    max-width: 400px;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Contenedor de Información de Contacto */
-.contact-info {
-    background-image: url('public/contacto/fundacion.jpeg'); /* Imagen de fondo */
-    background-size: cover;
-    background-position: center;
-}
-#contact-form {
-    display: flex;
-    flex-direction: column;
-}
-
-#contact-form label {
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-    color: #333;
-}
-
-#contact-form input,
-#contact-form textarea {
-    width: 100%;
-    padding: 0.75rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-#contact-form textarea {
-    height: 150px;
-}
-
-#contact-form button {
-    background-color: #00bfa5;
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    font-size: 1rem;
-}
-
-#contact-form button:hover {
-    background-color: #008f7a;
-}
-
-.contact-info h3 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: #02483d;
-}
-
-.contact-info p {
-    font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 1.5rem;
-}
-
-.contact-info a {
-    color: #00bfa5;
-    text-decoration: none;
-}
-
-.contact-info a:hover {
-    text-decoration: none;
-    color: #008f7a;
-}
-
-.contact-info img {
-    width: 50px;
-    height: auto;
-    margin-bottom: 1rem;
-}
-
-/* Ajustes de tamaño para los íconos en la sección de contacto */
-.contact-card img {
-    width: 40px;
-    height: auto;
-    margin: 10px 0;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.contact-card p {
-    text-align: center;
-    font-size: 1rem;
-    margin-top: 0.5rem;
-    margin-bottom: 1.5rem;
-}
-
-/* Centrado y ajuste de la tarjeta de contacto */
-.contact-card {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 2rem;
-    border-radius: 10px;
-    max-width: 400px;
-    margin: auto;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Ajustes Responsivos */
-@media (max-width: 768px) {
-    .contact-card img {
-        width: 50px;
-    }
-
-    .contact-info {
-        max-width: 100%;
-        padding: 1rem;
-    }
-
-    .contact-info img {
-        width: 40px;
-    }
-
-    .contact-info h3 {
-        font-size: 1.5rem;
-    }
-
-    .contact-info p {
-        font-size: 1rem;
-    }
-
-    .contact-card {
-        font-weight: 700;
-        margin-bottom: 1rem;
-        text-align: center;
-    }
-
-    .contact-title {
-        font-size: 1.2rem;
-    }
-}
-
-/* Footer */
-footer {
-    background-color: #ADD8E6;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-}
-
-footer p {
-    margin: 0;
-    font-size: 1rem;
-}
