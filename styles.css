@@ -2,7 +2,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box;  
 }
 
 body {
@@ -16,9 +16,9 @@ h1, h2, h3 {
 
 header nav {
     display: flex;
-    justify-content: space-between; /* Distribuye el espacio equitativamente entre los elementos */
+    justify-content: space-between;
     align-items: center;
-    padding: 0 2rem; /* Puedes ajustar este valor para cambiar el margen interior de los lados */
+    padding: 0 2rem;
 }
 
 header {
@@ -35,7 +35,230 @@ header {
     height: auto;
 }
 
-/* Menú de navegación */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav ul li {
+    margin-right: 2rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+    color: #f8b400;
+}
+.hero-about .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(19, 30, 61, 0.7); /* Transparencia azul */
+    z-index: 1;
+}
+#volver-btn {
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    background-color: #ff5733;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+}
+
+#volver-btn:hover {
+    background-color: #e14a2a;
+}
+
+#about, #mvv-section .hero-content h1 {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+#about, #mvv-section .hero-content p {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 2rem;
+}
+
+#about, #mvv-section {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(19, 30, 61, 0.7);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+/* Contenedor principal para Misión, Visión y Valores */
+.mvv-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 2rem;
+    text-align: center;
+    max-width: 1200px; /* Ajustar el ancho máximo para mayor control */
+    margin: 0 auto; /* Centrar el contenedor */
+}
+
+/* Cada contenedor individual */
+.mvv-box {
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo blanco transparente */
+    padding: 1.5rem;
+    border-radius: 10px;
+    flex-basis: calc(33.333% - 20px); /* Hace que cada contenedor ocupe 1/3 del espacio disponible */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para efecto de profundidad */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin-bottom: 20px; /* Espacio entre los contenedores verticalmente */
+}
+
+/* Títulos más pequeños */
+.mvv-box h1 {
+    font-size: 1.5rem; /* Tamaño del título más pequeño */
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+/* Descripciones más pequeñas */
+.mvv-box p {
+    font-size: 1rem; /* Tamaño de la descripción */
+    color: white;
+    margin-bottom: 1rem;
+}
+
+/* Botón Volver */
+#volver-btn {
+    margin-top: 2rem;
+    padding: 0.75rem 1.5rem; /* Tamaño más pequeño para el botón */
+    background-color: #ff5733;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem; /* Tamaño de letra más pequeño */
+    text-transform: uppercase;
+}
+
+#volver-btn:hover {
+    background-color: #e14a2a;
+}
+
+/* Responsividad para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .mvv-container {
+        flex-direction: column; /* Cambia a vertical en pantallas pequeñas */
+    }
+
+    .mvv-box {
+        width: 90%; /* Los contenedores ocupan el 90% del ancho en pantallas pequeñas */
+        margin-bottom: 1rem; /* Agrega un espacio entre los contenedores */
+    }
+}
+
+/* Títulos */
+.mvv-box h1 {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+/* Descripciones */
+.mvv-box p {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 2rem;
+}
+
+/* Estilo del botón para volver */
+#volver-btn {
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    background-color: #ff5733;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+}
+
+#volver-btn:hover {
+    background-color: #e14a2a;
+}
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #131e3d;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+header {
+    background-color: #131e3d;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 150px;
+    height: auto;
+}
+
 nav ul {
     list-style: none;
     display: flex;
@@ -57,93 +280,7 @@ nav ul li a:hover {
     color: #f8b400;
 }
 
-/* Estilos para la sección Nosotros */
-.hero-about {
-    position: relative;
-    height: 100vh;
-    background: url('public/DSC00209.jpg') no-repeat center center/cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
 
-.hero-about .hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(19, 30, 61, 0.7); /* Transparencia sobre la imagen de fondo */
-    z-index: 1;
-}
-
-.about-content {
-    position: relative;
-    z-index: 2;
-    color: white;
-    padding: 2rem;
-    max-width: 800px;
-    text-align: center;
-}
-
-.about-content h1 {
-    font-family: 'Inter', sans-serif;
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
-}
-
-.about-content p {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.5rem;
-    line-height: 1.8;
-    text-align: justify;
-    margin-bottom: 2rem;
-}
-
-/* Estilos de las tarjetas Misión, Visión y Valores */
-.center-layout {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    gap: 2rem;
-    padding: 2rem;
-    text-align: center;
-}
-
-.card {
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco transparente */
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.card h3 {
-    font-size: 1.8rem;
-    color: #00bfa5;
-    margin-bottom: 1rem;
-}
-
-.card p {
-    font-size: 1.2rem;
-    color: #555;
-    text-align: justify;
-}
-
-.centered-values {
-    list-style-type: none;
-    padding: 0;
-    font-size: 1.2rem;
-    color: #555;
-}
-
-.centered-values li {
-    margin-bottom: 0.5rem;
-}
 
 /* Responsividad para dispositivos móviles */
 @media (max-width: 768px) {
@@ -155,6 +292,7 @@ nav ul li a:hover {
 
     .card {
         width: 90%;
+        margin: 0 auto;
     }
 
     .card h3 {
@@ -175,14 +313,17 @@ nav ul li a:hover {
 
 .hero-about {
     position: relative;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    height: 100vh; /* Asegura que la imagen ocupe toda la altura de la ventana */
+    background: url('public/DSC00209.jpg') no-repeat center center/cover; /* Imagen centrada y ajustada a la pantalla */
+    background-size: cover; /* Asegura que la imagen cubra todo el espacio */
+    background-position: center; /* Centra la imagen */
     display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
+    justify-content: flex-start; /* Alineación hacia el inicio verticalmente */
+    align-items: flex-start; /* Alineación hacia el inicio horizontalmente */
+    text-align: left; /* Alineación del texto */
+    padding: 0; /* Elimina cualquier margen interno que cause el borde azul */
+    margin: 0; /* Elimina cualquier margen externo */
 }
 
 .hero-about .hero-overlay {
@@ -191,7 +332,7 @@ nav ul li a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(19, 30, 61, 0.7); /* Transparencia sobre la imagen de fondo */
+    background-color: rgba(19, 30, 61, 0.7); /* Transparencia azul */
     z-index: 1;
 }
 
@@ -696,14 +837,14 @@ footer p {
 /* Sección Programas */
 .programs-section {
     padding: 2rem;
-    background-color: #ADD8E6;
+    background-color: rgba(19, 30, 61, 0.7);
     text-align: center;
 }
 
 .programs-section h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
-    color: #02483d;
+    color: white;
 }
 
 .programs-container {

@@ -47,45 +47,37 @@
         </div>
     </section>
 
-    <!-- Sección Nosotros -->
-    <section id="about" class="about-section">
-        <div class="hero-about" style="background: url('public/DSC00209.jpg') no-repeat center center/cover; height: 100vh; position: relative;">
+    <!-- Sección de Nosotros -->
+    <section id="about" class="hero-section" style="display:block;">
+        <div class="hero" style="background: url('public/DSC00209.jpg') no-repeat center center/cover; height: 100vh; position: relative;">
             <div class="hero-overlay"></div>
-            <div class="about-content">
+            <div class="hero-content">
                 <h1 data-es="Nosotros" data-en="About Us">Nosotros</h1>
-                <p data-es="Fundación Internacional Transformados es una organización..." data-en="Fundación Internacional Transformados is an organization...">
-                    Fundación Internacional Transformados es una organización sin fines de lucro dedicada a mejorar la calidad de vida de las comunidades más vulnerables. Nuestro principal objetivo es promover el bienestar social mediante programas que abarcan áreas esenciales como la educación, la salud, la nutrición y el desarrollo comunitario.
-                </p>
+                <p data-es="Fundación Internacional Transformados es una organización sin fines de lucro dedicada a mejorar la calidad de vida de las comunidades más vulnerables. Nuestro principal objetivo es promover el bienestar social mediante programas que abarcan áreas esenciales como la educación, la salud, la nutrición y el desarrollo comunitario." data-en="The International Transformados Foundation is a non-profit organization dedicated to improving the quality of life of vulnerable communities. Our main goal is to promote social well-being through programs that cover essential areas such as education, health, nutrition, and community development.">Fundación Internacional Transformados es una organización sin fines de lucro dedicada a mejorar la calidad de vida de las comunidades más vulnerables...</p>
+                <a href="javascript:void(0);" class="button" id="planificacion-btn" data-es="PLANIFICACIÓN" data-en="PLANNING">PLANIFICACIÓN</a>
             </div>
         </div>
+    </section>
 
-        <!-- Misión, Visión, Valores dentro de la imagen de fondo -->
-        <div class="center-layout">
-            <!-- Misión -->
-            <div class="card">
-                <img src="public/Mision.png" alt="Misión Icon" class="icon">
-                <h3 data-es="MISIÓN" data-en="MISSION">MISIÓN</h3>
-                <p data-es="Asistir, empoderar y fortalecer a cada familia en el mundo a través de nuestros programas de desarrollo individual y comunitario." data-en="Assist, empower, and strengthen every family worldwide through our individual and community development programs.">Asistir, empoderar y fortalecer a cada familia en el mundo a través de nuestros programas de desarrollo individual y comunitario.</p>
+    <section id="mvv-section" class="hero-section" style="display:none;">
+        <div class="hero" style="background: url('public/FondoMVV.jpeg') no-repeat center center/cover; height: 100vh; position: relative;">
+            <div class="hero-overlay"></div>
+            <div class="hero-content mvv-container">
+                <div class="mvv-box">
+                    <h1>Misión</h1>
+                    <p>Descripción de la misión...</p>
+                </div>
+                <div class="mvv-box">
+                    <h1>Visión</h1>
+                    <p>Descripción de la visión...</p>
+                </div>
+                <div class="mvv-box">
+                    <h1>Valores</h1>
+                    <p>Descripción de los valores...</p>
+                </div>
+            <div>
+                <button id="volver-btn" class="button">Volver</button>
             </div>
-        
-            <!-- Visión -->
-            <div class="card">
-                <img src="public/Vision.png" alt="Visión Icon" class="icon">
-                <h3 data-es="VISIÓN" data-en="VISION">VISIÓN</h3>
-                <p data-es="Contar con oficinas en varios países del mundo, trabajando con el corazón, de manera ética y profesional en la atención brindada a cada beneficiario." data-en="To have offices in various countries, working with heart, ethically and professionally, in the care provided to each beneficiary.">Contar con oficinas en varios países del mundo, trabajando con el corazón, de manera ética y profesional en la atención brindada a cada beneficiario.</p>
-            </div>
-        
-            <!-- Valores -->
-            <div class="card">
-                <img src="public/Valores.png" alt="Valores Icon" class="icon">
-                <h3 data-es="VALORES" data-en="VALUES">VALORES</h3>
-                <ul class="centered-values" data-es="Excelencia, Integridad, Innovación, Responsabilidad Social, Compromiso" data-en="Excellence, Integrity, Innovation, Social Responsibility, Commitment">
-                    <li>Excelencia</li>
-                    <li>Integridad</li>
-                    <li>Innovación</li>
-                    <li>Responsabilidad Social</li>
-                    <li>Compromiso</li>
-                </ul>
             </div>
         </div>
     </section>
@@ -189,6 +181,17 @@
         <p>&copy; 2024 TRANSFORMADOS Fundación Internacional. Todos los derechos reservados.</p>
     </footer>
 
-    <script src="src/app.js"></script>
+    <script>
+        // Lógica para cambiar entre la sección de "Nosotros" y "Misión, Visión, Valores"
+        document.getElementById('planificacion-btn').addEventListener('click', function() {
+            document.getElementById('about').style.display = 'none';
+            document.getElementById('mvv-section').style.display = 'block';
+        });
+
+        document.getElementById('volver-btn').addEventListener('click', function() {
+            document.getElementById('about').style.display = 'block';
+            document.getElementById('mvv-section').style.display = 'none';
+        });
+    </script>
 </body>
 </html>
