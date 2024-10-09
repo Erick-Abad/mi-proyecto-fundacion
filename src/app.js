@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const hamburger = document.querySelector('.hamburger');
     const nav = document.querySelector('nav');
     const navLinks = document.querySelectorAll('nav ul li a');
+    const planificacionBtn = document.getElementById('planificacion-btn');
+    let currentLang = 'es'; // Establecemos por defecto español
 
     // Abre el menú hamburguesa
     hamburger.addEventListener('click', () => {
@@ -28,184 +30,141 @@ document.addEventListener('DOMContentLoaded', function () {
             document.body.style.overflow = 'auto';  // Restaura el scroll
         }
     });
-});
 
-document.getElementById('planificacion-btn').addEventListener('click', function () {
-    const aboutSection = document.getElementById('about');
+    // Cambio de imagen al presionar el botón de planificación
+    planificacionBtn.addEventListener('click', function () {
+        const aboutSection = document.getElementById('about');
 
-    // Reemplazar el contenido de "Nosotros" por Misión, Visión, Valores
-    aboutSection.innerHTML = `
-        <div class="hero-content mvv-container">
-            <div class="mvv-box">
-                <h1 data-es="Misión" data-en="Mission">Misión</h1>
-                <p data-es="Descripción de la misión..." data-en="Description of the mission...">Descripción de la misión...</p>
-            </div>
-            <div class="mvv-box">
-                <h1 data-es="Visión" data-en="Vision">Visión</h1>
-                <p data-es="Descripción de la visión..." data-en="Description of the vision...">Descripción de la visión...</p>
-            </div>
-            <div class="mvv-box">
-                <h1 data-es="Valores" data-en="Values">Valores</h1>
-                <p data-es="Descripción de los valores..." data-en="Description of the values...">Descripción de los valores...</p>
-            </div>
-            <a href="javascript:void(0);" class="button" id="volver-btn" data-es="Volver" data-en="Back">Volver</a>
-        </div>
-    `;
-
-    // Botón para volver a "Nosotros"
-    document.getElementById('volver-btn').addEventListener('click', function () {
-        aboutSection.innerHTML = `
-            <div class="hero" style="background: url('public/FondoMVV.jpeg') no-repeat center center/cover; height: 100vh; position: relative;">
-                <div class="hero-overlay"></div>
-                <div class="hero-content">
-                    <h1 data-es="Nosotros" data-en="About Us">Nosotros</h1>
-                    <p data-es="Fundación Internacional Transformados es una organización sin fines de lucro dedicada a mejorar la calidad de vida de las comunidades más vulnerables. Nuestro principal objetivo es promover el bienestar social mediante programas que abarcan áreas esenciales como la educación, la salud, la nutrición y el desarrollo comunitario." data-en="The International Transformados Foundation is a non-profit organization dedicated to improving the quality of life of vulnerable communities. Our main goal is to promote social well-being through programs that cover essential areas such as education, health, nutrition, and community development.">Fundación Internacional Transformados es una organización sin fines de lucro dedicada a mejorar la calidad de vida de las comunidades más vulnerables...</p>
-                    <a href="javascript:void(0);" class="button" id="planificacion-btn" data-es="PLANIFICACIÓN" data-en="PLANNING">PLANIFICACIÓN</a>
+        // Cambia el fondo dependiendo del idioma seleccionado
+        if (currentLang === 'en') {
+            aboutSection.innerHTML = `
+                <div class="hero" style="background: url('public/MVVen.jpg') no-repeat center center/cover; height: 100vh; position: relative;">
+                    <div class="hero-overlay1"></div>
+                    <div class="hero-content">
+                    
+                    </div>
                 </div>
-            </div>
-        `;
-
-        // Vuelve a agregar el listener al botón "Planificación"
-        document.getElementById('planificacion-btn').addEventListener('click', function () {
-            // Reemplaza el contenido nuevamente
-        });
-
-        // Restablece la traducción
-        changeLang(currentLang);
-    });
-
-    // Asegúrate de aplicar la traducción al nuevo contenido
-    changeLang(currentLang);
-});
-
-// Abre el modal de video
-function openVideoModal(videoSrc) {
-    const modal = document.getElementById('videoModal');
-    const videoSource = document.getElementById('videoSource');
-    const videoElement = document.getElementById('programVideo');
-
-    videoSource.src = `public/video/${videoSrc}`;
-    videoElement.load();  // Carga el nuevo video
-    modal.style.display = 'flex';
-    videoElement.play();  // Reproduce el video
-}
-
-// Cierra el modal de video
-function closeVideoModal() {
-    const modal = document.getElementById('videoModal');
-    const videoElement = document.getElementById('programVideo');
-
-    modal.style.display = 'none';
-    videoElement.pause();  // Pausa el video
-    videoElement.currentTime = 0;  // Reinicia el video
-}
-
-// Función para cambiar de diapositiva con flechas
-function changeSlide(n) {
-    showSlides(slideIndex += n);
-}
-
-// Función para cambiar el idioma
-function changeLang(lang) {
-    // Selecciona todos los elementos que tienen data-es y data-en
-    const elements = document.querySelectorAll('[data-es], [data-en]');
-
-    // Itera sobre cada elemento y cambia su texto según el idioma seleccionado
-    elements.forEach(el => {
-        const textEs = el.getAttribute('data-es');
-        const textEn = el.getAttribute('data-en');
-
-        if (lang === 'es') {
-            el.textContent = textEs;
-        } else if (lang === 'en') {
-            el.textContent = textEn;
+            `;
+        } else {
+            aboutSection.innerHTML = `
+                <div class="hero1" style="background: url('public/MVV.jpg') no-repeat center center/cover; height: 100vh; position: relative;">
+                    <div class="hero-overlay1"></div>
+                    <div class="hero-content">
+                    
+                    </div>
+                </div>
+            `;
         }
     });
-}
 
-// Open and close the hamburger menu with logo and responsive styling
-function toggleMenu() {
-    const nav = document.querySelector('nav ul');
-    const overlay = document.querySelector('.nav-overlay');
-    document.body.classList.toggle('nav-open');
+    // Abre el modal de video
+    window.openVideoModal = function (videoSrc) {  // Hacemos la función accesible globalmente
+        const modal = document.getElementById('videoModal');
+        const videoSource = document.getElementById('videoSource');
+        const videoElement = document.getElementById('programVideo');
 
-    // Close menu when clicking outside of it
-    overlay.addEventListener('click', () => {
-        document.body.classList.remove('nav-open');
-    });
-
-    // Close menu when selecting an option
-    nav.querySelectorAll('li').forEach(item => {
-        item.addEventListener('click', () => {
-            document.body.classList.remove('nav-open');
-        });
-    });
-}
-
-// Función para enviar formulario de contacto mediante POST al backend
-document.getElementById('contact-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-
-    // Usar fetch para enviar los datos al servidor
-    fetch('/api/send-email', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            name: name,
-            email: email,
-            message: message,
-        }),
-    })
-        .then(response => response.text())
-        .then(data => {
-            alert('Mensaje enviado correctamente');
-            document.getElementById('contact-form').reset();
-        })
-        .catch(error => {
-            console.error('Error al enviar el mensaje:', error);
-            alert('Hubo un problema al enviar el mensaje. Inténtalo nuevamente.');
-        });
-});
-
-// Selecciona la hamburguesa
-const hamburger = document.querySelector('.hamburger');
-
-// Variables para almacenar las posiciones del toque
-let isDragging = false;
-let startX, startY, initialX, initialY;
-
-// Inicia el arrastre
-hamburger.addEventListener('touchstart', (e) => {
-    isDragging = true;
-    startX = e.touches[0].clientX;
-    startY = e.touches[0].clientY;
-    initialX = hamburger.offsetLeft;
-    initialY = hamburger.offsetTop;
-});
-
-// Movimiento de arrastre
-document.addEventListener('touchmove', (e) => {
-    if (isDragging) {
-        const currentX = e.touches[0].clientX;
-        const currentY = e.touches[0].clientY;
-
-        const deltaX = currentX - startX;
-        const deltaY = currentY - startY;
-
-        // Actualiza la posición de la hamburguesa
-        hamburger.style.left = `${initialX + deltaX}px`;
-        hamburger.style.top = `${initialY + deltaY}px`;
+        videoSource.src = `public/video/${videoSrc}`;
+        videoElement.load();  // Carga el nuevo video
+        modal.style.display = 'flex';
+        videoElement.play();  // Reproduce el video
     }
-});
 
-// Termina el arrastre
-document.addEventListener('touchend', () => {
-    isDragging = false;
-});
+    // Cierra el modal de video
+    window.closeVideoModal = function () {  // Hacemos la función accesible globalmente
+        const modal = document.getElementById('videoModal');
+        const videoElement = document.getElementById('programVideo');
 
+        modal.style.display = 'none';
+        videoElement.pause();  // Pausa el video
+        videoElement.currentTime = 0;  // Reinicia el video
+    }
+
+    // Función para cambiar el idioma
+    window.changeLang = function (lang) {  // Hacemos la función accesible globalmente
+        currentLang = lang; // Actualizamos el idioma actual
+        const elements = document.querySelectorAll('[data-es], [data-en]');
+
+        elements.forEach(el => {
+            const textEs = el.getAttribute('data-es');
+            const textEn = el.getAttribute('data-en');
+
+            if (lang === 'es') {
+                el.textContent = textEs;
+            } else if (lang === 'en') {
+                el.textContent = textEn;
+            }
+        });
+    }
+
+    // Funciones para cambiar el idioma desde los botones
+    document.querySelector('.lang-toggle button:nth-child(1)').addEventListener('click', function() {
+        changeLang('es');
+    });
+    document.querySelector('.lang-toggle button:nth-child(2)').addEventListener('click', function() {
+        changeLang('en');
+    });
+
+    // Función para enviar formulario de contacto mediante POST al backend
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        // Usar fetch para enviar los datos al servidor
+        fetch('/api/send-email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                name: name,
+                email: email,
+                message: message,
+            }),
+        })
+            .then(response => response.text())
+            .then(data => {
+                alert('Mensaje enviado correctamente');
+                document.getElementById('contact-form').reset();
+            })
+            .catch(error => {
+                console.error('Error al enviar el mensaje:', error);
+                alert('Hubo un problema al enviar el mensaje. Inténtalo nuevamente.');
+            });
+    });
+
+    // Variables para almacenar las posiciones del toque
+    let isDragging = false;
+    let startX, startY, initialX, initialY;
+
+    // Inicia el arrastre
+    hamburger.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        initialX = hamburger.offsetLeft;
+        initialY = hamburger.offsetTop;
+    });
+
+    // Movimiento de arrastre
+    document.addEventListener('touchmove', (e) => {
+        if (isDragging) {
+            const currentX = e.touches[0].clientX;
+            const currentY = e.touches[0].clientY;
+
+            const deltaX = currentX - startX;
+            const deltaY = currentY - startY;
+
+            // Actualiza la posición de la hamburguesa
+            hamburger.style.left = `${initialX + deltaX}px`;
+            hamburger.style.top = `${initialY + deltaY}px`;
+        }
+    });
+
+    // Termina el arrastre
+    document.addEventListener('touchend', () => {
+        isDragging = false;
+    });
+});

@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Incluye la fuente Inter desde Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TRANSFORMADOS Fundación Internacional</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="public/favicon/LogoPrincipal.png">
 </head>
 <body>
@@ -25,7 +24,7 @@
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#about">Nosotros</a></li>
                 <li><a href="#programs">Nuestros Programas</a></li>
-                <li><a href="#help">Cómo Ayudar</a></li>
+              
                 <li><a href="#contact">Contáctanos</a></li>
             </ul>
         </nav>
@@ -59,28 +58,7 @@
         </div>
     </section>
 
-    <section id="mvv-section" class="hero-section" style="display:none;">
-        <div class="hero" style="background: url('public/FondoMVV.jpeg') no-repeat center center/cover; height: 100vh; position: relative;">
-            <div class="hero-overlay"></div>
-            <div class="hero-content mvv-container">
-                <div class="mvv-box">
-                    <h1>Misión</h1>
-                    <p>Descripción de la misión...</p>
-                </div>
-                <div class="mvv-box">
-                    <h1>Visión</h1>
-                    <p>Descripción de la visión...</p>
-                </div>
-                <div class="mvv-box">
-                    <h1>Valores</h1>
-                    <p>Descripción de los valores...</p>
-                </div>
-            <div>
-                <button id="volver-btn" class="button">Volver</button>
-            </div>
-            </div>
-        </div>
-    </section>
+  
 
     <!-- Sección Programas -->
     <section id="programs" class="programs-section">
@@ -113,6 +91,7 @@
                 <h3 data-es="Sonrisas de Luz" data-en="Smiles of Light">Sonrisas de Luz</h3>
                 <p data-es="Dirigido a la comunidad estudiantil donde brindamos apoyo psicoterapéutico..." data-en="For the student community where we provide psychotherapeutic support...">Dirigido a la comunidad estudiantil donde brindamos apoyo psicoterapéutico...</p>
             </div>
+            
         </div>
     </section>
 
@@ -136,11 +115,11 @@
                 <h2 data-es="Información de Contacto" data-en="Contact Information">Información de Contacto</h2>
                 <div>
                     <img src="public/contacto/telefono.png" alt="Teléfono">
-                    <p>+0989869617</p>
+                    <p>+593989869617</p>
                 </div>
                 <div>
                     <img src="public/contacto/correo.png" alt="Correo">
-                    <p><a href="mailto:transformadosdecorazon@outlook.com">transformadosdecorazon@outlook.com</a></p>
+                    <p>transformadosdecorazon@outlook.com</p>
                 </div>
                 <div>
                     <img src="public/contacto/ubicacion.png" alt="Ubicación">
@@ -164,34 +143,24 @@
         </div>
     </section>
 
-    <!-- Mapa -->
-    <div class="map-container">
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.493901019633!2d-78.50786602150304!3d-0.19133796313284277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d599c1ad34016b%3A0x7b4f4cf9f5d18a47!2sG%C3%B3mez%20Rend%C3%B3n%20%26%20Los%20R%C3%ADos%2C%20Quito%20170103%2C%20Ecuador!5e0!3m2!1ses!2sus!4v1694697123456!5m2!1ses!2sus" 
-            width="100%" 
-            height="400" 
-            frameborder="0" 
-            style="border:0;" 
-            allowfullscreen="" 
-            aria-hidden="false" 
-            tabindex="0"></iframe>
-    </div>
+   <!-- Mapa -->
+<div class="map-container">
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.493901019633!2d-79.8987999!3d-2.1736763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d599c1ad34016b%3A0x7b4f4cf9f5d18a47!2s2%C2%B010'25.2%22S+79%C2%B053'46.4%22W!5e0!3m2!1ses!2sus!4v1694697123456!5m2!1ses!2sus" 
+        width="100%" 
+        height="400" 
+        frameborder="0" 
+        style="border:0;" 
+        allowfullscreen="" 
+        aria-hidden="false" 
+        tabindex="0">
+    </iframe>
+</div>
 
     <footer>
         <p>&copy; 2024 TRANSFORMADOS Fundación Internacional. Todos los derechos reservados.</p>
     </footer>
 
-    <script>
-        // Lógica para cambiar entre la sección de "Nosotros" y "Misión, Visión, Valores"
-        document.getElementById('planificacion-btn').addEventListener('click', function() {
-            document.getElementById('about').style.display = 'none';
-            document.getElementById('mvv-section').style.display = 'block';
-        });
-
-        document.getElementById('volver-btn').addEventListener('click', function() {
-            document.getElementById('about').style.display = 'block';
-            document.getElementById('mvv-section').style.display = 'none';
-        });
-    </script>
+    <script src="src/app.js"></script>
 </body>
 </html>

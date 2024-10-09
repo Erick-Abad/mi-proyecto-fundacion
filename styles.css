@@ -75,6 +75,17 @@ nav ul li a:hover {
     font-size: 1.25rem;
     text-transform: uppercase;
 }
+.horizontal-layout {
+    display: flex;
+    flex-direction: row;  /* Los elementos se alinean en fila (horizontal) */
+    justify-content: space-around;  /* Distribuye los elementos con espacio entre ellos */
+    align-items: flex-start;  /* Alinea los elementos al inicio verticalmente */
+    gap: 2rem;  /* Espacio entre los elementos */
+    padding: 2rem;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+}
 
 #volver-btn:hover {
     background-color: #e14a2a;
@@ -121,46 +132,7 @@ nav ul li a:hover {
     margin: 0 auto;
     padding: 2rem;
 }
-/* Contenedor principal para Misión, Visión y Valores */
-.mvv-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
-    padding: 2rem;
-    text-align: center;
-    max-width: 1200px; /* Ajustar el ancho máximo para mayor control */
-    margin: 0 auto; /* Centrar el contenedor */
-}
 
-/* Cada contenedor individual */
-.mvv-box {
-    background-color: rgba(255, 255, 255, 0.2); /* Fondo blanco transparente */
-    padding: 1.5rem;
-    border-radius: 10px;
-    flex-basis: calc(33.333% - 20px); /* Hace que cada contenedor ocupe 1/3 del espacio disponible */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para efecto de profundidad */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    margin-bottom: 20px; /* Espacio entre los contenedores verticalmente */
-}
-
-/* Títulos más pequeños */
-.mvv-box h1 {
-    font-size: 1.5rem; /* Tamaño del título más pequeño */
-    color: white;
-    margin-bottom: 0.5rem;
-}
-
-/* Descripciones más pequeñas */
-.mvv-box p {
-    font-size: 1rem; /* Tamaño de la descripción */
-    color: white;
-    margin-bottom: 1rem;
-}
 
 /* Botón Volver */
 #volver-btn {
@@ -179,17 +151,7 @@ nav ul li a:hover {
     background-color: #e14a2a;
 }
 
-/* Responsividad para pantallas más pequeñas */
-@media (max-width: 768px) {
-    .mvv-container {
-        flex-direction: column; /* Cambia a vertical en pantallas pequeñas */
-    }
 
-    .mvv-box {
-        width: 90%; /* Los contenedores ocupan el 90% del ancho en pantallas pequeñas */
-        margin-bottom: 1rem; /* Agrega un espacio entre los contenedores */
-    }
-}
 
 /* Títulos */
 .mvv-box h1 {
@@ -520,49 +482,102 @@ nav ul li a:hover {
     .logo {
         display: none;
     }
-}/* Estilos del Modal */
+}/* Para evitar que la ventana modal se salga del margen */
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    position: relative;
-    max-width: 80%;
-    max-height: 80%;
-}
-
-.modal-content video {
-    width: 100%;
-    height: auto;
-}
-
-/* Sección de Contacto */
-.contact-section {
-    padding: 2rem;
-    text-align: center;
-    background-color: #ADD8E6;
-}
-
-.contact-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
+}
+
+/* Asegura que el contenido de la modal esté bien centrado */
+.modal-content {
+    max-width: 80%;
+    max-height: 80%;
+    background-color: rgba(255, 255, 255, 0.9); /* Color de fondo con transparencia */
+    padding: 1rem;
+    border-radius: 8px;
+    position: relative;
+}
+/* Asegura que el video se ajuste al 100% de su contenedor */
+.modal-content video {
+    width: 100%;  /* Ajusta el video al ancho completo del contenedor */
+    max-width: 100%;  /* Asegura que no exceda el 100% del ancho */
+    height: auto;  /* Mantiene la proporción del video */
+    display: block;  /* Elimina cualquier espacio en línea */
+    margin: 0 auto;  /* Centra el video en su contenedor */
+}
+
+/* Sección de Contacto con imagen de fondo y transparencia */
+.contact-section {
+    position: relative;
     padding: 2rem;
+    background: url('public/Comoayudar.png') no-repeat center center/cover; /* Imagen de fondo */
+    background-size: cover; /* Asegura que la imagen cubra todo el espacio */
+    background-position: center;
+    text-align: center;
+}
+
+
+.contact-container {
+    position: relative;
+    z-index: 2; /* Asegura que el contenido esté sobre la capa de transparencia */
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Hace que los contenedores tengan la misma altura */
+    flex-wrap: wrap;
     gap: 2rem;
 }
+/* Estilo del título "Contáctanos" */
+.contact-section h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.5rem; /* Ajustar tamaño */
+    color: white; /* Color blanco como los demás títulos */
+    margin-bottom: 2rem;
+}
+/* Contenedores de contacto con mismo tamaño */
+.contact-card, #contact-form {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px; /* Controla el ancho máximo */
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco translúcido */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+/* Estilo de los enlaces en información de contacto */
+.contact-card a {
+    color: white; /* Mismo color que el resto del texto */
+    text-decoration: none; /* Elimina el subrayado */
+}
+.contact-card a:hover {
+    text-decoration: underline; /* Solo subraya al pasar el mouse */
+    color: #00bfa5; /* Color distinto solo en hover */
+}
+/* Corregir número de celular */
+.contact-card p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+/* Ajustes Responsivos para la sección de contacto */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-card, #contact-form {
+        width: 90%; /* Ajusta el tamaño al 90% del ancho en pantallas pequeñas */
+    }
+}}
+
+
 
 #contact-form,
 .contact-info {
@@ -834,11 +849,16 @@ footer p {
     }
 }
 
+
+
 /* Sección Programas */
 .programs-section {
+    position: relative;
     padding: 2rem;
-    background-color: rgba(19, 30, 61, 0.7);
+    background: url('public/Presentacion2.jpg') no-repeat center center/cover; /* Imagen de fondo */
     text-align: center;
+    background-size: cover; /* Asegura que la imagen cubra todo el espacio */
+    background-position: center; /* Centra la imagen */
 }
 
 .programs-section h2 {
@@ -861,8 +881,19 @@ footer p {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    
 }
 
+.program-card1 {
+    width: 300px;
+    padding: 1rem;
+    background-color: rgba(19, 30, 61, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 10px;
+    flex-wrap: wrap;
+}
 .program-icon {
     width: 80px;
     margin-bottom: 1rem;
@@ -907,4 +938,429 @@ footer p {
     width: 100%;
     height: auto;
 }
+/* Modal para videos */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.modal-content video {
+    width: 100%;
+    height: auto;
+}
+
+/* Ajuste del contenedor de video en modales */
+.modal-content {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 1rem;
+    border-radius: 10px;
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.modal-content video {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Ajustes de responsividad para videos */
+@media (max-width: 768px) {
+    .modal-content {
+        max-width: 90%;
+        max-height: 90%;
+    }
+}
+
+/* Menú hamburguesa para móviles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    width: 50px;
+    height: 50px;
+    background-color: #ADD8E6;
+    border-radius: 50%;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+}
+
+/* Ajustes para el contenedor hero */
+.hero-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(19, 30, 61, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+/* Ajustes de navegación para dispositivos móviles */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 1rem 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .logo {
+        display: none;
+    }
+}
+
+/* Estilos de la sección de Programas */
+.programs-section {
+    position: relative;
+    padding: 2rem;
+    background: url('public/Presentacion2.jpg') no-repeat center center/cover;
+    background-size: cover;
+    text-align: center;
+}
+
+.programs-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.programs-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.program-card {
+    width: 300px;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.program-card1 {
+    width: 300px;
+    padding: 1rem;
+    background-color: rgba(19, 30, 61, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 10px;
+    flex-wrap: wrap;
+}
+
+.program-icon {
+    width: 80px;
+    margin-bottom: 1rem;
+}
+
+.program-card h3 {
+    font-size: 1.8rem;
+    color: #00bfa5;
+    margin-bottom: 1rem;
+}
+
+.program-card p {
+    font-size: 1.2rem;
+    color: #555;
+    text-align: justify;
+}
+
+/* Sección de Contacto */
+.contact-section {
+    position: relative;
+    padding: 2rem;
+    background: url('public/Comoayudar.png') no-repeat center center/cover;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+
+.contact-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.contact-card, #contact-form {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Sección de Contáctanos */
+.contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.contact-card img {
+    width: 40px;
+    height: auto;
+    margin: 10px 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-card p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: #ADD8E6;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Slider */
+.slider {
+    position: relative;
+    max-width: 100%;
+    height: 400px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: fadeEffect 1.5s ease-in-out;
+}
+
+@keyframes fadeEffect {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Ajustes para el contenedor de videos en el modal */
+.modal-content video {
+    width: 100%;
+    height: auto;
+}
+
+/* Responsividad en la Sección Programas */
+@media (max-width: 768px) {
+    .programs-section h2 {
+        font-size: 2rem;
+    }
+
+    .program-card {
+        width: 100%;
+    }
+}
+
+/* Estilo del formulario de contacto */
+#contact-form,
+.contact-info {
+    flex: 1;
+    max-width: 400px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#contact-form label {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #333;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#contact-form textarea {
+    height: 150px;
+}
+
+#contact-form button {
+    background-color: #00bfa5;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+}
+
+#contact-form button:hover {
+    background-color: #008f7a;
+}
+
+/* Íconos en la sección de contacto */
+.contact-info img {
+    width: 50px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.contact-card img {
+    width: 40px;
+    height: auto;
+    margin: 10px 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-card p {
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Responsividad para la sección de contacto */
+@media (max-width: 768px) {
+    .contact-card img {
+        width: 50px;
+    }
+
+    .contact-info {
+        max-width: 100%;
+        padding: 1rem;
+    }
+
+    .contact-info img {
+        width: 40px;
+    }
+
+    .contact-info h3 {
+        font-size: 1.5rem;
+    }
+
+    .contact-info p {
+        font-size: 1rem;
+    }
+
+    .contact-card {
+        font-weight: 700;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .contact-title {
+        font-size: 1.2rem;
+    }
+}
+
+/* Ajustes finales para video y modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.modal-content video {
+    width: 100%;
+    height: auto;
+}
+
 
