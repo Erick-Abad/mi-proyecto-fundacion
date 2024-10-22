@@ -14,7 +14,7 @@
             <img src="public/LogoPrincipal.png" alt="Logo Fundación" class="logo-img">
         </div>
         <!-- Menú hamburguesa -->
-        <div class="hamburger" onclick="toggleMenu()">
+        <div class="hamburger">
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
@@ -24,7 +24,6 @@
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#about">Nosotros</a></li>
                 <li><a href="#programs">Nuestros Programas</a></li>
-              
                 <li><a href="#contact">Contáctanos</a></li>
             </ul>
         </nav>
@@ -33,7 +32,7 @@
             <button onclick="changeLang('en')">EN</button>
         </div>
     </header>
-    
+
     <!-- Sección de Inicio -->
     <section id="inicio" class="hero-section">
         <div class="hero" style="background: url('public/activando3.jpg') no-repeat center center/cover; height: 100vh; position: relative;">
@@ -47,7 +46,7 @@
     </section>
 
     <!-- Sección de Nosotros -->
-    <section id="about" class="hero-section" style="display:block;">
+    <section id="about" class="hero-section">
         <div class="hero" style="background: url('public/DSC00209.jpg') no-repeat center center/cover; height: 100vh; position: relative;">
             <div class="hero-overlay"></div>
             <div class="hero-content">
@@ -58,40 +57,58 @@
         </div>
     </section>
 
-  
-
     <!-- Sección Programas -->
     <section id="programs" class="programs-section">
         <h2 data-es="Nuestros Programas" data-en="Our Programs">Nuestros Programas</h2>
+
+        <!-- Modal para opciones de programa -->
+        <div id="optionModal" class="modal">
+            <div class="modal-content" style="background: url('public/Presentacion2.jpg') no-repeat center center/cover;">
+                <button class="close-btn" onclick="closeOptionModal()">Cerrar</button>
+                <h2>Seleccione una opción</h2>
+                <div class="option-buttons">
+                    <button onclick="openVideo()" class="option-btn">Ver Video</button>
+                    <a id="instagramLink" href="#" target="_blank" class="option-btn link-btn">Seguir en Instagram</a>
+                </div>
+            </div>
+        </div>
+
         <div class="programs-container">
             <!-- Programa 1: Activando Corazones -->
-            <div class="program-card" id="activando-corazones" onclick="openVideoModal('Activando.mp4')">
+            <div class="program-card" id="activando-corazones" 
+                 onclick="openVideoModal('Activando.mp4', 'https://www.instagram.com/p/C_B4oCMJ6HF/')">
                 <img src="public/Donar.png" alt="Activando Corazones" class="program-icon">
                 <h3 data-es="Activando Corazones" data-en="Activating Hearts">Activando Corazones</h3>
-                <p data-es="Dirigido a personas que deseen formar parte de nuestro staff de donantes o voluntarios..." data-en="For those who wish to be part of our donor or volunteer staff...">Dirigido a personas que deseen formar parte de nuestro staff de donantes...</p>
+                <p data-es="Dirigido a personas que deseen formar parte de nuestro staff de donantes o voluntarios..." 
+                   data-en="For those who wish to be part of our donor or volunteer staff...">Dirigido a personas que deseen formar parte de nuestro staff de donantes...</p>
             </div>
-            
+
             <!-- Programa 2: Años Dorados -->
-            <div class="program-card" id="años-dorados" onclick="openVideoModal('año.mp4')">
+            <div class="program-card" id="años-dorados" 
+                 onclick="openVideoModal('año.mp4', 'https://www.instagram.com/p/C_B2UDXp4yO/')">
                 <img src="public/Años.png" alt="Años Dorados" class="program-icon">
                 <h3 data-es="Años Dorados" data-en="Golden Years">Años Dorados</h3>
-                <p data-es="Dirigido a los adultos mayores residentes del Hogar San José..." data-en="For senior residents of the Hogar San José...">Dirigido a los adultos mayores residentes del Hogar San José...</p>
+                <p data-es="Dirigido a los adultos mayores residentes del Hogar San José..." 
+                   data-en="For senior residents of the Hogar San José...">Dirigido a los adultos mayores residentes del Hogar San José...</p>
             </div>
 
             <!-- Programa 3: Mi Amor Trasciende -->
-            <div class="program-card" id="mi-amor" onclick="openVideoModal('amor.mp4')">
+            <div class="program-card" id="mi-amor" 
+                 onclick="openVideoModal('amor.mp4', 'https://www.instagram.com/p/C_B3QHnJP6n/')">
                 <img src="public/Familia.png" alt="Mi Amor Trasciende" class="program-icon">
                 <h3 data-es="Mi Amor Trasciende" data-en="My Love Transcends">Mi Amor Trasciende</h3>
-                <p data-es="Dirigido a familias, cuyo(s) miembro(s) menor(es) de edad padecen enfermedades catastróficas..." data-en="For families whose minor members suffer from catastrophic diseases...">Dirigido a familias, cuyo(s) miembro(s) menor(es) de edad padecen enfermedades catastróficas...</p>
+                <p data-es="Dirigido a familias, cuyo(s) miembro(s) menor(es) de edad padecen enfermedades catastróficas..." 
+                   data-en="For families whose minor members suffer from catastrophic diseases...">Dirigido a familias, cuyo(s) miembro(s) menor(es) de edad padecen enfermedades catastróficas...</p>
             </div>
 
             <!-- Programa 4: Sonrisas de Luz -->
-            <div class="program-card" id="sonrisas-luz" onclick="openVideoModal('sonrisa.mp4')">
+            <div class="program-card" id="sonrisas-luz" 
+                 onclick="openVideoModal('sonrisa.mp4', 'https://www.instagram.com/p/C_B2ybkJhvU/')">
                 <img src="public/Graduacion.png" alt="Sonrisas de Luz" class="program-icon">
                 <h3 data-es="Sonrisas de Luz" data-en="Smiles of Light">Sonrisas de Luz</h3>
-                <p data-es="Dirigido a la comunidad estudiantil donde brindamos apoyo psicoterapéutico..." data-en="For the student community where we provide psychotherapeutic support...">Dirigido a la comunidad estudiantil donde brindamos apoyo psicoterapéutico...</p>
+                <p data-es="Dirigido a la comunidad estudiantil donde brindamos apoyo psicoterapéutico..." 
+                   data-en="For the student community where we provide psychotherapeutic support...">Dirigido a la comunidad estudiantil donde brindamos apoyo psicoterapéutico...</p>
             </div>
-            
         </div>
     </section>
 
@@ -131,31 +148,31 @@
             <form id="contact-form">
                 <label for="name" data-es="NOMBRE:" data-en="NAME:">NOMBRE:</label>
                 <input type="text" id="name" name="name" placeholder="Escriba su nombre aquí" required>
-        
+
                 <label for="email" data-es="EMAIL:" data-en="EMAIL:">EMAIL:</label>
                 <input type="email" id="email" name="email" placeholder="email@address.com" required>
-        
+
                 <label for="message" data-es="MENSAJE:" data-en="MESSAGE:">MENSAJE:</label>
                 <textarea id="message" name="message" placeholder="Escribe aquí tu mensaje" required></textarea>
-        
+
                 <button type="submit" data-es="Enviar" data-en="Send">Enviar</button>
             </form>
         </div>
     </section>
 
-   <!-- Mapa -->
-<div class="map-container">
-    <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.493901019633!2d-79.8987999!3d-2.1736763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d599c1ad34016b%3A0x7b4f4cf9f5d18a47!2s2%C2%B010'25.2%22S+79%C2%B053'46.4%22W!5e0!3m2!1ses!2sus!4v1694697123456!5m2!1ses!2sus" 
-        width="100%" 
-        height="400" 
-        frameborder="0" 
-        style="border:0;" 
-        allowfullscreen="" 
-        aria-hidden="false" 
-        tabindex="0">
-    </iframe>
-</div>
+    <!-- Mapa -->
+    <div class="map-container">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.493901019633!2d-79.8987999!3d-2.1736763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d599c1ad34016b%3A0x7b4f4cf9f5d18a47!2s2%C2%B010'25.2%22S+79%C2%B053'46.4%22W!5e0!3m2!1ses!2sus!4v1694697123456!5m2!1ses!2sus" 
+            width="100%" 
+            height="400" 
+            frameborder="0" 
+            style="border:0;" 
+            allowfullscreen="" 
+            aria-hidden="false" 
+            tabindex="0">
+        </iframe>
+    </div>
 
     <footer>
         <p>&copy; 2024 TRANSFORMADOS Fundación Internacional. Todos los derechos reservados.</p>
