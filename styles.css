@@ -135,6 +135,116 @@ nav ul li a:hover {
     margin: 0 auto;
     padding: 2rem;
 }
+/* Estilos del menú hamburguesa y contenedor del menú en móviles */
+@media (max-width: 768px) {
+    .nav-container {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(19, 30, 61, 0.95); /* Fondo oscuro semi-transparente */
+        z-index: 999;
+    }
+
+    .nav-container.nav-active {
+        display: flex; /* Muestra el menú cuando está activo */
+    }
+
+    .nav-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem; /* Espacio entre las opciones del menú */
+    }
+
+    .nav-links li a {
+        color: white;
+        font-size: 1.5rem;
+        text-decoration: none;
+    }
+
+    .nav-links li a:hover {
+        color: #f8b400; /* Color de hover */
+    }
+
+    .lang-toggle {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        margin-top: 2rem; /* Espacio encima del selector de idioma */
+    }
+
+    .lang-toggle button {
+        background-color: #ffffff;
+        color: #131e3d;
+        border: none;
+        padding: 0.5rem 1rem;
+        font-size: 1.2rem;
+        cursor: pointer;
+        border-radius: 5px;
+        text-transform: uppercase;
+    }
+
+    .lang-toggle button:hover {
+        background-color: #f8b400;
+        color: white;
+    }
+
+    /* Estilo del menú hamburguesa */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        width: 50px;
+        height: 50px;
+        background-color: #ADD8E6;
+        border-radius: 50%;
+        z-index: 1000;
+    }
+
+    .hamburger .bar {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 4px 0;
+        transition: 0.3s;
+    }
+}
+
+/* Estilos para pantallas grandes (PC) */
+@media (min-width: 769px) {
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .lang-toggle {
+        margin-left: auto;
+        display: flex;
+        gap: 1rem;
+    }
+}
 
 /* Botón Volver */
 #volver-btn {

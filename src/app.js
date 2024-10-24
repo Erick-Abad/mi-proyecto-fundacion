@@ -1,19 +1,27 @@
 document.addEventListener('DOMContentLoaded', function () {
     const hamburger = document.querySelector('.hamburger');
-    const nav = document.querySelector('nav');
+    const navContainer = document.querySelector('.nav-container'); // Contenedor completo del menú
     const navLinks = document.querySelectorAll('nav ul li a');
     const planificacionBtn = document.getElementById('planificacion-btn');
     let currentLang = 'es'; // Establecemos por defecto español
     let selectedVideoSrc = ''; // Variable para guardar el video seleccionado
     let instagramLink = ''; // Variable para guardar el enlace de Instagram
-
-    // Abre el menú hamburguesa
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navContainer.classList.remove('nav-active'); // Cierra el menú
+            hamburger.classList.remove('active'); // Quita la animación de la hamburguesa
+            document.body.style.overflow = 'auto'; // Restaura el scroll
+        });
+    });
+    // Abre o cierra el menú hamburguesa
     if (hamburger) {
         hamburger.addEventListener('click', () => {
-            nav.classList.toggle('nav-active'); // Muestra/oculta el menú
-            hamburger.classList.toggle('active'); // Agrega una clase para animación de la hamburguesa
-            if (nav.classList.contains('nav-active')) {
-                document.body.style.overflow = 'hidden'; // Evita el scroll en la vista móvil
+            navContainer.classList.toggle('nav-active'); // Muestra/oculta el menú
+            hamburger.classList.toggle('active'); // Anima el ícono de la hamburguesa
+    
+            // Control del scroll en pantalla móvil
+            if (navContainer.classList.contains('nav-active')) {
+                document.body.style.overflow = 'hidden'; // Evita el scroll
             } else {
                 document.body.style.overflow = 'auto'; // Restaura el scroll
             }
@@ -23,16 +31,18 @@ document.addEventListener('DOMContentLoaded', function () {
     // Cierra el menú al hacer clic en una opción
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
-            nav.classList.remove('nav-active');
-            hamburger.classList.remove('active');
-            document.body.style.overflow = 'auto';  // Restaura el scroll
+            if (navContainer) {
+                navContainer.classList.remove('nav-active');
+                hamburger.classList.remove('active');
+                document.body.style.overflow = 'auto';  // Restaura el scroll
+            }
         });
     });
 
     // Cierra el menú al hacer clic fuera de él
     document.addEventListener('click', (e) => {
-        if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
-            nav.classList.remove('nav-active');
+        if (navContainer && !navContainer.contains(e.target) && !hamburger.contains(e.target)) {
+            navContainer.classList.remove('nav-active');
             hamburger.classList.remove('active');
             document.body.style.overflow = 'auto';  // Restaura el scroll
         }
@@ -44,20 +54,22 @@ document.addEventListener('DOMContentLoaded', function () {
             const aboutSection = document.getElementById('about');
 
             // Cambia el fondo dependiendo del idioma seleccionado
-            if (currentLang === 'en') {
-                aboutSection.innerHTML = `
-                    <div class="hero" style="background: url('public/MVVen.jpg') no-repeat center center/cover; height: 100vh; position: relative;">
-                        <div class="hero-overlay1"></div>
-                        <div class="hero-content"></div>
-                    </div>
-                `;
-            } else {
-                aboutSection.innerHTML = `
-                    <div class="hero1" style="background: url('public/MVV.jpg') no-repeat center center/cover; height: 100vh; position: relative;">
-                        <div class="hero-overlay1"></div>
-                        <div class="hero-content"></div>
-                    </div>
-                `;
+            if (aboutSection) {
+                if (currentLang === 'en') {
+                    aboutSection.innerHTML = `
+                        <div class="hero" style="background: url('public/MVVen.jpg') no-repeat center center/cover; height: 100vh; position: relative;">
+                            <div class="hero-overlay1"></div>
+                            <div class="hero-content"></div>
+                        </div>
+                    `;
+                } else {
+                    aboutSection.innerHTML = `
+                        <div class="hero1" style="background: url('public/MVV.jpg') no-repeat center center/cover; height: 100vh; position: relative;">
+                            <div class="hero-overlay1"></div>
+                            <div class="hero-content"></div>
+                        </div>
+                    `;
+                }
             }
         });
     }
