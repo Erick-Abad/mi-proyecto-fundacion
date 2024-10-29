@@ -153,6 +153,9 @@ nav ul li a:hover {
 
     .nav-container.nav-active {
         display: flex; /* Muestra el menú cuando está activo */
+        background-image: url('public/favicon/LogoPrincipal.png');
+        background-size: cover;
+        background-position: center;
     }
 
     .nav-links {
@@ -809,22 +812,32 @@ footer p {
     align-items: center;
 }
 
+/* Estilo del botón de cerrar para estar encima del video */
 .modal-content button.close-btn {
     position: absolute;
     top: 10px;
-    right: 10px;
+    left: 10px;  /* El botón está en la esquina superior izquierda */
     background-color: #ff4d4d;
     color: white;
     border: none;
     border-radius: 5px;
     padding: 0.5rem 1rem;
     cursor: pointer;
+    z-index: 10;  /* Asegura que esté encima del video */
 }
 
 .modal-content button.close-btn:hover {
     background-color: #cc0000;
 }
 
+.modal-content video {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    position: relative;
+    z-index: 1;  /* Asegura que el video esté detrás del botón */
+    border-radius: 5px;
+}
 /* Sección de Programas */
 .programs-section {
     position: relative;
@@ -972,13 +985,34 @@ footer p {
 
 /* Ajustes de responsividad para videos */
 @media (max-width: 768px) {
+    /* Asegurar que las imágenes no sobresalgan de su contenedor en móviles */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Ajustar el contenedor principal para la responsividad */
+.container {
+    width: 100%;
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
+
+/* Ajustar los elementos hero para la responsividad */
+.hero {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: auto;
+}
     .modal-content {
         max-width: 90%;
         max-height: 90%;
     }
 }
 
-/* Ajustes finales para video y modal */
+/* Estilos del modal */
 .modal {
     display: none;
     position: fixed;
@@ -990,18 +1024,19 @@ footer p {
     background-color: rgba(0, 0, 0, 0.7);
     justify-content: center;
     align-items: center;
+    overflow: hidden; /* Evita que el contenido se desborde */
 }
 
 .modal-content {
+    position: relative;
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
-    position: relative;
     max-width: 80%;
     max-height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
 }
 
-.modal-content video {
-    width: 100%;
-    height: auto;
-}

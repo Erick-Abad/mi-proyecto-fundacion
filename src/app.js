@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentLang = 'es'; // Establecemos por defecto español
     let selectedVideoSrc = ''; // Variable para guardar el video seleccionado
     let instagramLink = ''; // Variable para guardar el enlace de Instagram
+
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             navContainer.classList.remove('nav-active'); // Cierra el menú
@@ -13,16 +14,21 @@ document.addEventListener('DOMContentLoaded', function () {
             document.body.style.overflow = 'auto'; // Restaura el scroll
         });
     });
+
     // Abre o cierra el menú hamburguesa
     if (hamburger) {
         hamburger.addEventListener('click', () => {
             navContainer.classList.toggle('nav-active'); // Muestra/oculta el menú
             hamburger.classList.toggle('active'); // Anima el ícono de la hamburguesa
-    
-            // Control del scroll en pantalla móvil
+
+            // Cambiar imagen de fondo del menú hamburguesa activo
             if (navContainer.classList.contains('nav-active')) {
+                navContainer.style.backgroundImage = "url('public/favicon/LogoPrincipal.png')";
+                navContainer.style.backgroundSize = 'cover';
+                navContainer.style.backgroundPosition = 'center';
                 document.body.style.overflow = 'hidden'; // Evita el scroll
             } else {
+                navContainer.style.backgroundImage = 'none';
                 document.body.style.overflow = 'auto'; // Restaura el scroll
             }
         });
@@ -34,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (navContainer) {
                 navContainer.classList.remove('nav-active');
                 hamburger.classList.remove('active');
+                navContainer.style.backgroundImage = 'none'; // Elimina la imagen de fondo
                 document.body.style.overflow = 'auto';  // Restaura el scroll
             }
         });
@@ -44,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (navContainer && !navContainer.contains(e.target) && !hamburger.contains(e.target)) {
             navContainer.classList.remove('nav-active');
             hamburger.classList.remove('active');
+            navContainer.style.backgroundImage = 'none'; // Elimina la imagen de fondo
             document.body.style.overflow = 'auto';  // Restaura el scroll
         }
     });
@@ -188,4 +196,12 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
+
+    // Ajuste para cerrar el modal de video desde el botón de cerrar dentro del contenedor
+    const closeBtns = document.querySelectorAll('.close-btn');
+    closeBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+            closeVideoModal();  // Cerrar el modal cuando se haga clic en el botón
+        });
+    });
 });
